@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="index3.html" class="brand-link">
-        <img src="{{asset('admin-assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
+    <a href="{{route("admin.dashboard")}}" class="brand-link">
+        <img src="{{asset($setting->logo)}}" alt="Indriya" class="brand-image img-circle elevation-3"
+            style="opacity:.8">
         <span class="brand-text font-weight-light">Indriya</span>
     </a>
 
@@ -17,54 +17,120 @@
                         </p>
                     </a>
                 </li>
-                {{-- {{request()->routeIs('user.customer')?"active":""}} --}}
-                {{-- <li class="nav-item">
-                    <a href="{{route('user.customer')}}" class="nav-link ">
-                        <i class="nav-icon fas fa-users"></i>
+
+                <li class="nav-header">Assets</li>
+
+                <li class="nav-item">
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon far fa-address-card"></i>
                         <p>
-                            Customers
+                            About Us
                         </p>
                     </a>
-                </li> --}}
+                </li>
+               
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon fas fa-image"></i>
                         <p>
-                            Layout Options
+                            Assets
                             <i class="fas fa-angle-left right"></i>
-                            <span class="badge badge-info right">6</span>
+                            {{-- <span class="badge badge-info right">6</span> --}}
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a href="{{url("/")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation</p>
+                                <p>Gallery</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="{{url("/")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation + Sidebar</p>
+                                <p>Page Management</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-               
-                <li class="nav-header">EXAMPLES</li>
+
+                <li class="nav-header">Events</li>
                 <li class="nav-item">
-                    <a href="pages/calendar.html" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-week"></i>
                         <p>
-                            Calendar
-                            <span class="badge badge-info right">2</span>
+                            Events
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url("/")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Events</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url("/")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Campaign</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                
+                <li class="nav-header">Forms</li>
+                <li class="nav-item">
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon fas fa-comment-dots"></i>
+                        <p>
+                            Contact Us
                         </p>
                     </a>
                 </li>
-                
-                <li class="nav-header">Settings</li>
                 <li class="nav-item">
-                    <a href="/" class="nav-link">
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon fas fa-paper-plane"></i>
+                        <p>
+                            Subscriptions
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon far fa-sticky-note"></i>
+                        <p>
+                            Merchandise
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url("/")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Receipents</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url("/")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Donars</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url("/")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Volunteers</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="nav-header">Settings & SEO</li>
+                <li class="nav-item">
+                    <a href="{{route("admin.setting")}}" class="nav-link {{request()->routeIs('admin.setting')?"active":""}}">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>Settings</p>
                     </a>

@@ -11,13 +11,17 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/toastr/toastr.min.css')}}">
+    <link rel="icon" href="{{asset($setting->favicon)}}" />
+    <link rel="shortcut icon" href="{{asset($setting->favicon)}}" />
     @livewireStyles
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/') }}"><b>Indriya</b>Admin</a>
+            <a href="{{ url('/') }}">
+                <img src="{{asset($setting->logo)}}"/>
+            </a>
         </div>
         @yield('content')
     </div>

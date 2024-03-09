@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Livewire CRM | Dashboard</title>
+    @yield("meta-title")
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/dist/css/datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.css')}}">
+    <link rel="icon" href="{{asset($setting->favicon)}}" />
+    <link rel="shortcut icon" href="{{asset($setting->favicon)}}" />
     @livewireStyles
 </head>
 
@@ -57,6 +60,7 @@
     <script src="{{ asset('admin-assets/plugins/toastr/toastr.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('admin-assets/dist/js/datepicker.js') }}"></script>
+    <script src="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <script>
         $('.datepicker').datepicker();
     </script>

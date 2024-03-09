@@ -1,3 +1,6 @@
+@section("meta-title")
+<title>Indriya | Dashboard</title>
+@endsection
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
