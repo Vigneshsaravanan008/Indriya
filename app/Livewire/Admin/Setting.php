@@ -35,6 +35,7 @@ class Setting extends Component
             $this->email=$setting->email;
             $this->phone_number=$setting->phone_number;
             $this->address=$setting->address;
+            $this->address_content=($this->address_content==null)?$setting->address:$this->address_content;
             $this->common_image_path=$setting->common_image;
             $this->favicon_path=$setting->favicon;
             $this->logo_path=$setting->logo;

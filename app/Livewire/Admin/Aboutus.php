@@ -30,6 +30,7 @@ class Aboutus extends Component
             $this->title=$about_us->title;
             $this->short_description=$about_us->short_description;
             $this->objective=$about_us->objective;
+            $this->objective_content=($this->objective_content==null)?$about_us->objective:$this->objective_content;
             $this->vission=$about_us->our_vission;
             $this->mission=$about_us->our_mission;
             $this->image_path=$about_us->image;
