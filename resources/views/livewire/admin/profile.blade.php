@@ -48,6 +48,15 @@
                                     <li class="list-group-item">
                                         <b>Current Ipaddress</b> <span class="float-right">{{ $ipaddress }}</span>
                                     </li>
+                                    <li class="list-group-item">
+                                        <b>Theme</b> <span class="float-right">
+                                            @if(Auth::guard('admin')->user()->is_dark_mode)
+                                                <i class="fas fa-moon fa-flip-vertical toogle_checkbox" data-id="1" style="color: #ffffff;"></i>
+                                            @else
+                                                <i class="fas fa-sun toogle_checkbox" data-id="0" style="color: #696108;"></i>
+                                            @endif
+                                        </span>
+                                    </li>
                                 </ul>
 
                                 {{-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> --}}
@@ -173,5 +182,17 @@
             location.reload();
         }, 1500);
     });
+
+    $(document).ready(function(){
+        $(".toogle_checkbox").on('click',function(){
+            if($(this).data("id")==1)
+            {
+                $("body").addClass("remove-mode");
+            }else{
+                $("body").addClass("dark-mode");
+            }
+            @this.setToggle();
+        })
+    })
 </script>
 @endpush

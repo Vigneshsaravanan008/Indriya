@@ -21,7 +21,7 @@
                 <li class="nav-header">Assets</li>
 
                 <li class="nav-item">
-                    <a href="{{url("/")}}" class="nav-link">
+                    <a href="{{route("admin.aboutus")}}" class="nav-link {{request()->routeIs('admin.aboutus')?"active":""}}">
                         <i class="nav-icon far fa-address-card"></i>
                         <p>
                             About Us
@@ -35,18 +35,11 @@
                         <p>
                             Assets
                             <i class="fas fa-angle-left right"></i>
-                            {{-- <span class="badge badge-info right">6</span> --}}
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url("/")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Gallery</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url("/")}}" class="nav-link">
+                            <a href="{{route("admin.pagemanagement")}}" class="nav-link {{request()->routeIs('admin.pagemanagement')?"active":""}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Page Management</p>
                             </a>
@@ -59,21 +52,15 @@
                     <a href="{{url("/")}}" class="nav-link">
                         <i class="nav-icon fas fa-calendar-week"></i>
                         <p>
-                            Events
+                            Events & Campain
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url("/")}}" class="nav-link">
+                            <a href="{{route("admin.event")}}" class="nav-link {{request()->routeIs('admin.event')?"active":""}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Events</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url("/")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Campaign</p>
                             </a>
                         </li>
                     </ul>
@@ -82,7 +69,7 @@
                 
                 <li class="nav-header">Forms</li>
                 <li class="nav-item">
-                    <a href="{{url("/")}}" class="nav-link">
+                    <a href="{{route("admin.contactus")}}" class="nav-link {{request()->routeIs('admin.contactus')?"active":""}}">
                         <i class="nav-icon fas fa-comment-dots"></i>
                         <p>
                             Contact Us
@@ -90,7 +77,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url("/")}}" class="nav-link">
+                    <a href="{{route("admin.subscription")}}" class="nav-link {{request()->routeIs('admin.subscription')?"active":""}}">
                         <i class="nav-icon fas fa-paper-plane"></i>
                         <p>
                             Subscriptions
@@ -113,19 +100,25 @@
                                 <p>Receipents</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{url("/")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Donars</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url("/")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Volunteers</p>
-                            </a>
-                        </li>
                     </ul>
+                </li>
+
+                <li class="nav-header">Products</li>
+                <li class="nav-item">
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>
+                            Products
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="nav-icon fas fa-cart-arrow-down"></i>
+                        <p>
+                            Orders
+                        </p>
+                    </a>
                 </li>
                 
                 <li class="nav-header">Settings & SEO</li>

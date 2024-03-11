@@ -59,12 +59,13 @@
                     <a href="{{route('admin.profile')}}" class="dropdown-item">
                         <i class="fas fa-user"></i> 
                         <span class="text-muted text-lg ml-2">Profile</span>
-                    </a>
+                    </a>  
                     <div class="dropdown-divider"></div>
                     <a href="{{route('admin.setting')}}" class="dropdown-item">
                         <i class="fas fa-cog"></i> 
                         <span class="text-muted text-lg ml-2">Settings</span>
                     </a>
+                   
                     <div class="dropdown-divider"></div>
                     <a href="{{route('admin.logout')}}" class="dropdown-item">
                         <i class="fas fa-sign-out-alt"></i>

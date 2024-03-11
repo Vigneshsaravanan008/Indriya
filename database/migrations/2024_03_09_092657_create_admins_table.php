@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string("phone_number")->nullable();
             $table->string('image')->nullable();
+            $table->integer('is_dark_mode')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

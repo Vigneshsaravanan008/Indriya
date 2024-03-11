@@ -14,28 +14,31 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/dist/css/datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/plugins/toggle/toggle.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.css')}}">
     <link rel="icon" href="{{asset($setting->favicon)}}" />
     <link rel="shortcut icon" href="{{asset($setting->favicon)}}" />
     @livewireStyles
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition {{(Auth::guard("admin")->user()->is_dark_mode)?"dark-mode":""}} sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
-
+        
         {{-- <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__wobble" src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60"
-                width="60">
+            width="60">
         </div> --}}
-
+        
         @include('admin.layouts.header')
-
+        
         <!-- Sidebar Menu -->
         @include('admin.layouts.sidebar')
         <!-- /.sidebar-menu -->
-
+        
         @yield('content')
-
+        
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
@@ -61,6 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('admin-assets/dist/js/datepicker.js') }}"></script>
     <script src="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
+    <script src="{{ asset('admin-assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
     <script>
         $('.datepicker').datepicker();
     </script>

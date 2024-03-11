@@ -15,7 +15,7 @@ class Setting extends Component
 
     protected $rules = [
         'name'=>'required|max:25',
-        'email'=>'required',
+        'email'=>'required|max:25',
         'phone_number'=>'nullable',
         'address'=>'nullable',
         'logo'=>'nullable',

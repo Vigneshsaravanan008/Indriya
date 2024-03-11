@@ -64,4 +64,12 @@ class Profile extends Component
         Session::flush();
         return redirect('admin/login');
     }
+
+    public function setToggle()
+    {
+        Admin::where('id',Auth::guard("admin")->user()->id)->update([
+            'is_dark_mode'=>!Auth::guard("admin")->user()->is_dark_mode
+        ]);
+        $this->dispatch('dismiss',message: 'Theme Updated Successfully',parameter:'200');
+    }
 }
