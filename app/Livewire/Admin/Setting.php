@@ -4,13 +4,14 @@ namespace App\Livewire\Admin;
 
 use App\Models\Seo;
 use App\Models\Setting as ModelsSetting;
+use App\Models\Social;
 use App\Traits\ImageTrait;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class Setting extends Component
 {
-    public $name,$email,$phone_number,$address,$address_content,$logo,$favicon,$common_image,$id,$logo_path,$favicon_path,$common_image_path,$meta_title,$meta_keyword,$meta_description,$og_image,$seo_id,$og_image_path;
+    public $name,$email,$phone_number,$address,$address_content,$logo,$favicon,$common_image,$id,$logo_path,$favicon_path,$common_image_path,$meta_title,$meta_keyword,$meta_description,$og_image,$seo_id,$og_image_path,$facebook_url,$instagram_url,$twitter_url;
     use WithFileUploads,ImageTrait;
 
     protected $rules = [
@@ -27,6 +28,7 @@ class Setting extends Component
     {
         $setting=ModelsSetting::first();
         $seo=Seo::first();
+        $social=Social::first();
         if($setting!=null)
         {
             $this->id=$setting->id;
@@ -43,6 +45,9 @@ class Setting extends Component
             $this->meta_keyword=@$seo->meta_keyword;
             $this->meta_description=@$seo->meta_description;
             $this->og_image_path=@$seo->og_image;
+            $this->facebook_url=@$social->facebook_url;
+            $this->instagram_url=@$social->instagram_url;
+            $this->twitter_url=@$social->twitter_url;
             $this->dispatch("message",parameter:"200");
         }
         return view('livewire.admin.setting')->extends('admin.layouts.master')->section('content');
@@ -91,6 +96,22 @@ class Setting extends Component
         ];
         Seo::updateOrCreate(['id'=>$this->seo_id],$datas);
         $this->dispatch('dismiss',message: 'SEO Updated Successfully',parameter:'200');
+    }
+
+    public function updateSocial()
+    {
+        $this->validate([
+            'twitter_url'=>'required',
+            'facebook_url'=>'required',
+            'instagram_url'=>'required',
+        ]);
+        $datas=[
+            'twitter_url'=>$this->twitter_url,
+            'facebook_url'=>$this->facebook_url,
+            'instagram_url'=>$this->instagram_url,
+        ];
+        Social::updateOrCreate(['id'=>$this->seo_id],$datas);
+        $this->dispatch('dismiss',message: 'Social Links Updated Successfully',parameter:'200');
     }
     
 }

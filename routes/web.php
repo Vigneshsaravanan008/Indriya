@@ -1,6 +1,11 @@
 <?php
 
+use App\Livewire\Web\Aboutus;
+use App\Livewire\Web\Campaign;
+use App\Livewire\Web\Contactus;
 use App\Livewire\Web\Home;
+use App\Livewire\Web\Events;
+use App\Livewire\Web\Membership;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +20,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',Home::class);
+
+//About-us
+Route::get('/about-us',Aboutus::class)->name("site.aboutus");
+
+//Events
+Route::get("/events",Events::class)->name("site.events");
+
+//Campains
+Route::get("/campaign",Campaign::class)->name("site.campaign");
+
+//Membership
+Route::get("/membership",Membership::class)->name("site.membership");
+
+//Contactus
+Route::get("/contact-us",Contactus::class)->name("site.contactus");

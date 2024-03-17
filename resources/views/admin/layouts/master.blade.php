@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.css')}}">
+    @yield("stylesheets")
     <link rel="icon" href="{{asset($setting->favicon)}}" />
     <link rel="shortcut icon" href="{{asset($setting->favicon)}}" />
     @livewireStyles

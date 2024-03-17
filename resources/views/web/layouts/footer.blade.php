@@ -4,7 +4,7 @@
             <img class="footer__shape__animation" src="{{asset("web-assets/assets/images/shape/footer-shape-left.png")}}" alt="shape">
         </div>
         <div class="footer__shape-right wow slideInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-            <img class="footer__shape__animation-right" src="assets/images/shape/footer-shape-right.png"
+            <img class="footer__shape__animation-right" src="{{asset("web-assets/assets/images/shape/footer-shape-right.png")}}"
                 alt="shape">
         </div>
         <div class="container">
@@ -12,8 +12,8 @@
                 <div class="row g-4 justify-content-between">
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div class="footer__item">
-                            <a href="index.html" class="logo mb-40">
-                                <img src="{{asset("web-assets/assets/images/logo/logo-light.svg")}}" alt="image">
+                            <a href="{{url("/")}}" class="logo mb-40">
+                                <img src="{{asset($setting->logo)}}" alt="image">
                             </a>
                             <p class="text-white">Phasellus ultricies aliquam volutpat
                                 ullamcorper laoreet neque, a lacinia
@@ -88,19 +88,16 @@
                             <h3 class="title mb-40 text-white">Contact Info</h3>
                             <ul class="link info">
                                 <li class="mb-3">
-                                    <a href="tel:+8555-2546-2566"><i
+                                    <a href="tel:{{$setting->phone_number}}"><i
                                             class="fa-solid fa-phone me-1 primary-color"></i>
-                                        +8
-                                        555-2546-2566</a>
+                                        {{$setting->phone_number}}</a>
                                 </li>
                                 <li class="mb-3">
-                                    <a href="#0"><i class="fa-sharp fa-solid fa-envelope me-1 primary-color"></i>
-                                        info@example.com</a>
+                                    <a href="mailto:{{$setting->email}}"><i class="fa-sharp fa-solid fa-envelope me-1 primary-color"></i>
+                                        {{$setting->email}}</a>
                                 </li>
                                 <li>
-                                    <a href="#0"><i class="fa-solid fa-location-dot me-1 primary-color"></i> 3891
-                                        Ranchview California
-                                        62639</a>
+                                    <a href="jvascript:void(0)"><i class="fa-solid fa-location-dot me-1 primary-color"></i> {!!$setting->address!!}</a>
                                 </li>
                             </ul>
                             <div class="social-icon mt-30">
@@ -116,7 +113,7 @@
         </div>
     </div>
     <div class="footer__copytext">
-        <p class="wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">&copy; All Copyright 2023 by <a
-                href="#0" class="text-white primary-hover">Donatim</a></p>
+        <p class="wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">&copy; All Copyright {{date("Y")}} by <a
+                href="{{url("/")}}" class="text-white primary-hover">{{$setting->name}}</a></p>
     </div>
 </footer>

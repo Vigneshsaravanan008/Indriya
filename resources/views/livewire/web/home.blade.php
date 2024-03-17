@@ -1,5 +1,7 @@
- <div>
- <!-- Banner area start here -->
+@section("meta-details")
+@include("web.seo.custom",["common"=>$page])
+@endsection
+<div>
  <section class="banner-two-area">
     <div class="swiper banner-two__slider">
         <div class="swiper-wrapper">

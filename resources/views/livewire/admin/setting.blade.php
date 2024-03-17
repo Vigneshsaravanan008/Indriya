@@ -180,6 +180,54 @@
                         </form>
                     </div>
                 </div>
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h3 class="card-title">Social Links</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form wire:submit="updateSocial">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Facebook</label>
+                                        <input type="text"
+                                            class="form-control @error('facebook_url') is-invalid @enderror"
+                                            wire:model="facebook_url" id="facebook_url"
+                                            placeholder="Enter Facebook Url">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Instagram</label>
+                                        <input type="text"
+                                            class="form-control @error('instagram_url') is-invalid @enderror"
+                                            wire:model="instagram_url" id="instagram_url"
+                                            placeholder="Enter Instagram Url">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Twitter</label>
+                                        <input type="text"
+                                            class="form-control @error('twitter_url') is-invalid @enderror"
+                                            wire:model="twitter_url" id="twitter_url"
+                                            placeholder="Enter Twitter Url">
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="modal-footer float-right">
+                                <button type="button" wire:click="updateSocial" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

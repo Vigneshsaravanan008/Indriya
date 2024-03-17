@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sadaka - Non Profit Charity HTML Template</title>
-    <link rel="shortcut icon" href="{{ asset('web-assets/assets/images/favicon.png') }}">
+    
+    @yield("meta-details")
+
+    <link rel="shortcut icon" href="{{ asset($setting->favicon) }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/meanmenu.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/all.min.css') }}">
@@ -25,7 +27,7 @@
         <div id="loading-center">
             <div id="loading-center-absolute">
                 <div class="loading-icon text-center d-flex flex-column align-items-center justify-content-center">
-                    <img class="loading-logo" src="{{ asset('web-assets/assets/images/preloader.svg') }}"
+                    <img class="loading-logo" src="{{ asset($setting->logo) }}"
                         alt="icon">
                 </div>
             </div>

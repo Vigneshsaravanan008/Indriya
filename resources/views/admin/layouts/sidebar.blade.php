@@ -52,7 +52,7 @@
                     <a href="{{url("/")}}" class="nav-link">
                         <i class="nav-icon fas fa-calendar-week"></i>
                         <p>
-                            Events & Campain
+                            Events & Campaign
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -104,6 +104,14 @@
                 </li>
 
                 <li class="nav-header">Products</li>
+                <li class="nav-item">
+                    <a href="{{route("admin.productcategory")}}" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>
+                            Products Category
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{url("/")}}" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>

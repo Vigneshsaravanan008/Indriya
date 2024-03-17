@@ -8,6 +8,7 @@ use App\Livewire\Admin\Aboutus;
 use App\Livewire\Admin\Contactus;
 use App\Livewire\Admin\Event;
 use App\Livewire\Admin\Pagemanagement;
+use App\Livewire\Admin\ProductCategory;
 use App\Livewire\Admin\Subscription;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,9 @@ Route::prefix('/admin')->group(function () {
 
         //Subscriptions
         Route::get("/subscription",Subscription::class)->name("admin.subscription");
+
+        //Product Category
+        Route::get("/product-category",ProductCategory::class)->name('admin.productcategory');
 
         //Profile
         Route::get('/profile',Profile::class)->name('admin.profile');

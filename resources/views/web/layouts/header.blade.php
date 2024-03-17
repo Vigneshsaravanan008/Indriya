@@ -9,7 +9,7 @@
                             fill="white" />
                     </svg>
 
-                    <a href="#0" class="ms-1">info@example.com</a>
+                    <a href="mailto:{{$setting->email}}" class="ms-1">{{$setting->email}}</a>
                 </li>
                 <li class="ms-4"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -29,14 +29,14 @@
                         </defs>
                     </svg>
 
-                    <a href="#0" class="ms-1">+208-6666-0112</a>
+                    <a href="tel:{{$setting->phone_number}}" class="ms-1">{{$setting->phone_number}}</a>
                 </li>
             </ul>
             <ul class="link-info">
-                <li><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="#0"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a href="#0"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                <li><a href="{{$social->facebook_url}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="{{$social->twitter_url}}"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="{{$social->instagram_url}}"><i class="fa-brands fa-instagram"></i></a></li>
+                {{-- <li><a href="{{$social->}}"><i class="fa-brands fa-pinterest-p"></i></a></li> --}}
             </ul>
         </div>
     </div>
@@ -44,159 +44,51 @@
 <header class="header-area">
     <div class="container">
         <div class="header__main">
-            <a href="index.html" class="logo">
-                <img src="{{asset("web-assets/assets/images/logo/logo.svg")}}" alt="logo">
+            <a href="{{url("/")}}" class="logo">
+                <img src="{{asset($setting->logo)}}" alt="logo">
             </a>
             <div class="main-menu">
                 <nav>
                     <ul>
                         <li class="has-megamenu">
-                            <a href="#0">Home</a>
-                            <ul class="sub-menu mega-menu menu-image">
-                                <li>
-                                    <div class="image text-center">
-                                        <img src="{{asset("web-assets/assets/images/menu/home1-image.jpg")}}" alt="image">
-                                        <div class="btn__group">
-                                            <div class="btn-three">
-                                                <span class="btn-circle">
-                                                </span>
-                                                <a href="index.html" class="btn-inner">
-                                                    <span class="btn-text">
-                                                        Multi Page
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <h6 class="text-white">Home One</h6>
-                                    </div>
-                                    <div class="image text-center">
-                                        <img src="{{asset("web-assets/assets/images/menu/home2-image.jpg")}}" alt="image">
-                                        <div class="btn__group">
-                                            <div class="btn-three">
-                                                <span class="btn-circle">
-                                                </span>
-                                                <a href="index-2.html" class="btn-inner">
-                                                    <span class="btn-text">
-                                                        Multi Page
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <h6 class="text-white">Home Two</h6>
-                                    </div>
-                                    <div class="image text-center">
-                                        <img src="{{asset("web-assets/assets/images/menu/home1-image.jpg")}}" alt="image">
-                                        <div class="btn__group">
-                                            <div class="btn-three">
-                                                <span class="btn-circle">
-                                                </span>
-                                                <a href="index-one-page.html" class="btn-inner">
-                                                    <span class="btn-text">
-                                                        One Page
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <h6 class="text-white">Home One</h6>
-                                    </div>
-                                    <div class="image text-center">
-                                        <img src="{{asset("web-assets/assets/images/menu/home2-image.jpg")}}" alt="image">
-                                        <div class="btn__group">
-                                            <div class="btn-three">
-                                                <span class="btn-circle">
-                                                </span>
-                                                <a href="index-2-one-page.html" class="btn-inner">
-                                                    <span class="btn-text">
-                                                        One Page
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <h6 class="text-white">Home Two</h6>
-                                    </div>
-                                </li>
-                            </ul>
+                            <a href="{{url("/")}}" class="active">Home</a>
                         </li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="{{route("site.aboutus")}}">About</a></li>
+                        <li><a href="{{route("site.campaign")}}">Campaign</a></li>
+                        <li><a href="{{route("site.events")}}">Events</a></li>
                         <li>
-                            <a href="#0">Causes</a>
+                            <a href="#">Membership</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="cause.html">Causes Grid</a>
-                                </li>
-                                <li>
-                                    <a href="cause-list.html">Causes List</a>
-                                </li>
-                                <li>
-                                    <a href="cause-single.html">Causes Single</a>
+                                    <a href="{{route("site.membership")}}">Recipients Registration</a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#0">Pages</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="project.html">Project</a>
-                                </li>
-                                <li>
-                                    <a href="project-single.html">Project Single</a>
-                                </li>
-                                <li>
-                                    <a href="team.html">Volunteer</a>
-                                </li>
-                                <li>
-                                    <a href="team-single.html">Volunteer Single</a>
-                                </li>
-                                <li>
-                                    <a href="faq.html">FAQ's</a>
-                                </li>
-                                <li>
-                                    <a href="error.html">404 Error</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#0">Event</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="event.html">Event Grid</a>
-                                </li>
-                                <li>
-                                    <a href="event-list.html">Event List</a>
-                                </li>
-                                <li>
-                                    <a href="event-single.html">Event Single</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#0">Blog</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="blog.html">Blog Grid</a>
-                                </li>
-                                <li>
-                                    <a href="blog-classic.html">Blog Classic</a>
-                                </li>
-                                <li>
-                                    <a href="blog-single.html">Blog Single</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Media Center</a></li>
+                        <li><a href="{{route("site.contactus")}}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="btn-two d-none d-lg-inline-block">
                 <span class=" btn-circle">
                 </span>
-                <a href="cause-single.html" class="btn-inner">
+                <a href="#" class="btn-inner">
                     <span class="btn-text">
                         DONATE NOW
                     </span>
                 </a>
             </div>
-            <div class="bars d-block d-lg-none">
+            <div class="btn-two d-none d-lg-inline-block">
+                <span class=" btn-circle">
+                </span>
+                <a href="#" class="btn-inner">
+                    <span class="btn-text">
+                        Cart
+                    </span>
+                </a>
+            </div>
+            <div
+             class="bars d-block d-lg-none">
                 <i id="openButton" class="fa-solid fa-bars"></i>
             </div>
         </div>
