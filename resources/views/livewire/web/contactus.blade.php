@@ -86,37 +86,34 @@
                                 Get in Touch
                             </h2>
                         </div>
-                        <form action="#">
+                        <form wire:submit="addContactus">
+                            @csrf
+                            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" value="">
+                            <input type="hidden" name="action" value="validate_captcha">
                             <div class="row">
                                 <div class="col-6">
                                     <label for="name">Your Name*</label>
-                                    <input id="name" type="text" placeholder="Your Name">
+                                    <input id="name" wire:model="name" type="text" placeholder="Your Name">
                                 </div>
                                 <div class="col-6">
                                     <label for="email">Your Email*</label>
-                                    <input id="email" type="email" placeholder="Your Email">
+                                    <input id="email" wire:model="email" type="email" placeholder="Your Email">
                                 </div>
                             </div>
-                            <label for="subject">Subject*</label>
-                            <select name="#" id="subject">
-                                <option value="0">UI/UX Design</option>
-                                <option value="1">Web Developer</option>
-                                <option value="2">Marketing Manager</option>
-                                <option value="3">Electrical Engineer</option>
-                                <option value="4">Web Designer</option>
-                            </select>
+                            <label for="subject">Phone Number</label>
+                            <input id="phone_number" wire:model="phone_number" type="tel" placeholder="Your Phone Number">
                             <div class="text-area">
-                                <label for="massage">Your Review*</label>
-                                <textarea id="massage" placeholder="Write Message"></textarea>
+                                <label for="message">Your Review*</label>
+                                <textarea id="message" wire:model="message" placeholder="Write Message"></textarea>
                             </div>
                             <div class="btn-two">
                                 <span class="btn-circle">
                                 </span>
-                                <a href="#" class="btn-inner">
+                                <button type="button" wire:click="addContactus" class="btn-inner">
                                     <span class="btn-text">
                                         Post Comment
                                     </span>
-                                </a>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -125,3 +122,25 @@
         </div>
     </section>
 </div>
+@push('javascript')
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+<script>
+    var reCAPTCHA_site_key = "{{ env('RECAPTCHA_SITE_KEY') }}"
+    $(function(){
+           grecaptcha.ready(function() {
+          grecaptcha.execute(reCAPTCHA_site_key, {action:'validate_captcha'})
+                    .then(function(token) {
+              $('#g-recaptcha-response').val(token);
+          });
+      });
+       $('#g-recaptcha-response').val('123');
+    })
+
+    Livewire.on('dismissmodal', function(data) {
+        (data.parameter == 400) ? toastr.error(data.message): toastr.success(data.message);
+        setTimeout(() => {
+            location.reload();
+        }, 1500);
+    });
+</script>
+@endpush

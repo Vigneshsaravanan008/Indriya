@@ -35,7 +35,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
-                                            <th>Event / Campain</th>
+                                            <th>Event / Campaign</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -44,7 +44,7 @@
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{$event->title}}</td>
-                                                <td>{{ ($event->type==1)?"Event":"Campain" }}</td>
+                                                <td>{{ ($event->post_type==1)?"Event":"Campaign" }}</td>
                                                 <td>
                                                     <button class="btn btn-primary"
                                                         wire:click="editEvent({{ $event->id }})"><i
@@ -103,24 +103,27 @@
                                         wire:model="type">
                                         <option value="">Select Type</option>
                                         <option value="1">Event</option>
-                                        <option value="2">Campain</option>
+                                        <option value="2">Campaign</option>
                                     </select>
                                     @error('type')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="Description">Description</label>
-                                    <textarea class="form-control @error('description') is-invalid @enderror" rows="3" wire:model="description"
-                                    placeholder="Enter Description"></textarea>
-                                    @error('description')
+                                    <label for="Slug">Slug</label>
+                                    <input type="text"
+                                        class="form-control @error('slug') is-invalid @enderror"
+                                        wire:model="slug" id="slug" placeholder="Enter Slug">
+                                    @error('slug')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-12">
+
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputFile">Image</label>
                                     <div class="input-group">
@@ -133,6 +136,91 @@
                                         </div>
                                     </div>
                                     @error('image')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Description">Description</label>
+                                    <textarea class="form-control @error('description') is-invalid @enderror" rows="3" wire:model="description"
+                                    placeholder="Enter Description"></textarea>
+                                    @error('description')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Location">Location</label>
+                                    <input type="text"
+                                        class="form-control @error('location') is-invalid @enderror"
+                                        wire:model="location" id="location" placeholder="Enter Location">
+                                    @error('location')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Date">Event Date</label>
+                                    <input type="date" class="form-control @error('date') is-invalid @enderror"
+                                        wire:model="date" id="date" placeholder="Enter Date">
+                                    @error('date')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Start Time">Start Time</label>
+                                    <input type="time" class="form-control @error('start_time') is-invalid @enderror"
+                                        wire:model="start_time" id="start_time" placeholder="Enter Start Time">
+                                    @error('start_time')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="End Time">End Time</label>
+                                    <input type="time" class="form-control @error('end_time') is-invalid @enderror"
+                                        wire:model="end_time" id="end_time" placeholder="Enter End Time">
+                                    @error('end_time')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Title">Meta Title</label>
+                                    <input type="text"
+                                        class="form-control @error('meta_title') is-invalid @enderror"
+                                        wire:model="meta_title" id="meta_title" placeholder="Enter Meta Title">
+                                    @error('meta_title')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Keyword">Meta Keyword</label>
+                                        <textarea class="form-control @error('meta_keyword') is-invalid @enderror" rows="3" wire:model="meta_keyword"
+                                        placeholder="Enter Meta Keyword"></textarea>
+                                    @error('meta_keyword')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Description">Meta Description</label>
+                                    <textarea class="form-control @error('meta_description') is-invalid @enderror" rows="3" wire:model="meta_description"
+                                        placeholder="Enter Meta Description"></textarea>
+                                    @error('meta_description')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -180,26 +268,27 @@
                                         wire:model="type">
                                         <option value="">Select Type</option>
                                         <option value="1">Event</option>
-                                        <option value="2">Campain</option>
+                                        <option value="2">Campaign</option>
                                     </select>
                                     @error('type')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-                            
-                            <div class="col-md-12">
+
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="Description">Description</label>
-                                    <textarea class="form-control @error('description') is-invalid @enderror" rows="3" wire:model="description"
-                                    placeholder="Enter Description"></textarea>
-                                    @error('description')
+                                    <label for="Slug">Slug</label>
+                                    <input type="text"
+                                        class="form-control @error('slug') is-invalid @enderror"
+                                        wire:model="slug" id="slug" placeholder="Enter Slug">
+                                    @error('slug')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-                            
-                            <div class="col-md-12">
+
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputFile">Image
                                         @if ($image_url != null)
@@ -216,6 +305,90 @@
                                         </div>
                                     </div>
                                     @error('image')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Description">Description</label>
+                                    <textarea class="form-control @error('description') is-invalid @enderror" rows="3" wire:model="description"
+                                    placeholder="Enter Description"></textarea>
+                                    @error('description')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Location">Location</label>
+                                    <input type="text"
+                                        class="form-control @error('location') is-invalid @enderror"
+                                        wire:model="location" id="location" placeholder="Enter Location">
+                                    @error('location')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Date">Event Date</label>
+                                    <input type="date" class="form-control @error('date') is-invalid @enderror"
+                                        wire:model="date" id="date" placeholder="Enter Date">
+                                    @error('date')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Start Time">Start Time</label>
+                                    <input type="time" class="form-control @error('start_time') is-invalid @enderror"
+                                        wire:model="start_time" id="start_time" placeholder="Enter Start Time">
+                                    @error('start_time')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="End Time">End Time</label>
+                                    <input type="time" class="form-control @error('end_time') is-invalid @enderror"
+                                        wire:model="end_time" id="end_time" placeholder="Enter End Time">
+                                    @error('end_time')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Title">Meta Title</label>
+                                    <input type="text"
+                                        class="form-control @error('meta_title') is-invalid @enderror"
+                                        wire:model="meta_title" id="meta_title" placeholder="Enter Meta Title">
+                                    @error('meta_title')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Keyword">Meta Keyword</label>
+                                        <textarea class="form-control @error('meta_keyword') is-invalid @enderror" rows="3" wire:model="meta_keyword"
+                                        placeholder="Enter Meta Keyword"></textarea>
+                                    @error('meta_keyword')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Description">Meta Description</label>
+                                    <textarea class="form-control @error('meta_description') is-invalid @enderror" rows="3" wire:model="meta_description"
+                                        placeholder="Enter Meta Description"></textarea>
+                                    @error('meta_description')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -249,7 +422,7 @@
             if (data.parameter == "200") {
                 Swal.fire({
                     title: "Deleted!",
-                    text: "Pagemanagement has been deleted.",
+                    text: "Event/Campaign has been deleted.",
                     icon: "success"
                 });
             } else {
@@ -286,7 +459,7 @@
                 confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    @this.deletePageManagement(value);
+                    @this.deleteEvent(value);
                 }
             });
         })

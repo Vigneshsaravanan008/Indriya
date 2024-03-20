@@ -14,9 +14,17 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->integer("post_type")->comment("1:Event;2:Campain");
-            $table->string("title");
-            $table->longText("description");
-            $table->string("image");
+            $table->string("title")->nullable();
+            $table->string("slug")->nullable();
+            $table->longText("description")->nullable();
+            $table->string("image")->nullable();
+            $table->string("location")->nullable();
+            $table->date("date")->nullable();
+            $table->string("start_time")->nullable();
+            $table->string("end_time")->nullable();
+            $table->string("meta_title")->nullable();
+            $table->string("meta_keyword")->nullable();
+            $table->string("meta_description")->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

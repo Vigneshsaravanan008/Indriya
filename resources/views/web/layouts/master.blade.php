@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/plugins/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/style.css') }}">
@@ -67,9 +68,10 @@
     <script src="{{ asset('web-assets/assets/js/nice-select.min.js') }}"></script>
     <script src="{{ asset('web-assets/assets/js/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('web-assets/assets/js/jquery.waypoints.js') }}"></script>
+    <script src="{{ asset('admin-assets/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('web-assets/assets/js/script.js') }}"></script>
     @livewireScripts
-    @stack('script')
+    @stack('javascript')
 </body>
 
 </html>

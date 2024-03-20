@@ -39,7 +39,7 @@ class ProductCategory extends Component
     public function editProductCategory($id)
     {
         $product_category=ModelsProductCategory::where('id',$id)->first();
-        
+
         if($product_category!=null)
         {
             $this->id=$product_category->id;
@@ -57,7 +57,6 @@ class ProductCategory extends Component
     {
         $this->validate();
         try {
-            
             ModelsProductCategory::where('id',$this->id)->update([
                 'name'=>$this->name,
             ]);

@@ -15,9 +15,7 @@
                             <a href="{{url("/")}}" class="logo mb-40">
                                 <img src="{{asset($setting->logo)}}" alt="image">
                             </a>
-                            <p class="text-white">Phasellus ultricies aliquam volutpat
-                                ullamcorper laoreet neque, a lacinia
-                                curabitur lacinia mollis</p>
+                            <p class="text-white">The INDRIYA FOUNDATION was founded in 2022 with the main goal of working for the social development and caring of individuals and groups who are suffering from a brain tumors.</p>
                             <div class="btn-one mt-40">
                                 <span class="btn-circle">
                                 </span>

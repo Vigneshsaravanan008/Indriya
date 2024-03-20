@@ -37,7 +37,6 @@ class Setting extends Component
             $this->email=$setting->email;
             $this->phone_number=$setting->phone_number;
             $this->address=$setting->address;
-            $this->address_content=($this->address_content==null)?$setting->address:$this->address_content;
             $this->common_image_path=$setting->common_image;
             $this->favicon_path=$setting->favicon;
             $this->logo_path=$setting->logo;
@@ -62,7 +61,7 @@ class Setting extends Component
         $datas=[
             'name'=>$this->name,
             'email'=>$this->email,
-            'address'=>$this->address_content,
+            'address'=>$this->address,
             'phone_number'=>$this->phone_number,
             'common_image'=>$common_image,
             'favicon'=>$favicon,
@@ -71,12 +70,6 @@ class Setting extends Component
         ModelsSetting::updateOrCreate(['id'=>$this->id],$datas);
 
         $this->dispatch('dismiss',message: 'Setting Updated Successfully',parameter:'200');
-    }
-
-    public function setAddress($value)
-    {
-        $this->address_content=$value;
-        return true;
     }
 
     public function updateSeo()

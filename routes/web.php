@@ -6,6 +6,7 @@ use App\Livewire\Web\Contactus;
 use App\Livewire\Web\Home;
 use App\Livewire\Web\Events;
 use App\Livewire\Web\Membership;
+use App\Livewire\Web\ViewEvent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,6 @@ Route::get("/membership",Membership::class)->name("site.membership");
 
 //Contactus
 Route::get("/contact-us",Contactus::class)->name("site.contactus");
+
+//Events or Campaings
+Route::get("/{slug}",ViewEvent::class)->name("site.viewevent");

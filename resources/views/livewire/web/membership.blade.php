@@ -217,37 +217,54 @@
                  </div>
                  <div class="col-lg-7 order-1 order-lg-2">
                     <div class="contact__form">
-                        <form action="#">
+                        <form wire:submit="addMembership">
+                            @csrf
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="name">Your Name*</label>
-                                    <input id="name" type="text" placeholder="Your Name">
+                                    <label for="First Name">First Name*</label>
+                                    <input id="first_name"  wire:model="first_name" type="text" placeholder="Your First Name">
                                 </div>
                                 <div class="col-6">
-                                    <label for="email">Your Email*</label>
-                                    <input id="email" type="email" placeholder="Your Email">
+                                    <label for="Last Name">Last Name*</label>
+                                    <input id="last_name" wire:model="last_name" type="text" placeholder="Your Last Name">
                                 </div>
                             </div>
-                            <label for="subject">Subject*</label>
-                            <select name="#" id="subject">
-                                <option value="0">UI/UX Design</option>
-                                <option value="1">Web Developer</option>
-                                <option value="2">Marketing Manager</option>
-                                <option value="3">Electrical Engineer</option>
-                                <option value="4">Web Designer</option>
+                            <div class="col-12">
+                                <label for="email">Your Email*</label>
+                                <input id="email" wire:model="email" type="email" placeholder="Your Email">
+                            </div>
+                            <div class="col-12">
+                                <label for="phone_number">Your Phone*</label>
+                                <input id="phone_number" wire:model="phone_number" type="tel" placeholder="Your Phone Number">
+                            </div>
+                            <div class="col-12">
+                                <label for="gender">Gender*</label>
+                                <input id="gender" wire:model="gender" type="text" placeholder="Your Gender">
+                            </div>
+                            <div class="col-12">
+                                <label for="location">Location*</label>
+                                <input id="location" wire:model="location" type="text" placeholder="Your Location">
+                            </div> 
+                           
+                            <label for="Categories">Categories*</label>
+                            <select wire:model="categories" class="form-control" id="subject">
+                                <option value="Individuals">Individuals</option>
+                                <option value="Corporates & Business Entities ">Corporates & Business Entities </option>
+                                <option value="Schools & Colleges">Schools & Colleges</option>
+                                <option value="Other Institutions">Other Institutions</option>
                             </select>
-                            <div class="text-area">
-                                <label for="massage">Your Review*</label>
-                                <textarea id="massage" placeholder="Write Message"></textarea>
+                            <div class="col-12">
+                                <label for="Organisation Name">Organisation Name*</label>
+                                <input id="organization_name" wire:model="organization_name" type="text" placeholder="Your Organisation Name">
                             </div>
                             <div class="btn-two">
                                 <span class="btn-circle">
                                 </span>
-                                <a href="#" class="btn-inner">
+                                <button type="button" wire:click="addMembership" class="btn-inner">
                                     <span class="btn-text">
-                                        Post Comment
+                                        Submit
                                     </span>
-                                </a>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -257,3 +274,13 @@
      </div>
  </section>
 </div>
+@push('javascript')
+<script>
+    Livewire.on('dismissmodal', function(data) {
+        (data.parameter == 400) ? toastr.error(data.message): toastr.success(data.message);
+        setTimeout(() => {
+            location.reload();
+        }, 1500);
+    });
+</script>
+@endpush

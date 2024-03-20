@@ -11,7 +11,7 @@ use Livewire\WithPagination;
 
 class Event extends Component
 {
-    public $title,$image,$image_url,$description,$type,$id,$model_title="Add Event";
+    public $title,$image,$image_url,$description,$type,$location,$date,$start_time,$end_time,$id,$model_title="Add Event",$slug,$meta_title,$meta_keyword,$meta_description;
     
     use WithFileUploads,ImageTrait;
     use WithPagination;
@@ -20,6 +20,7 @@ class Event extends Component
         'title'=>'required',
         'type'=>'required',
         'description'=>'required',
+        'slug'=>'required',
         'image'=>'nullable|image|max:2048',
     ];
 
@@ -50,13 +51,21 @@ class Event extends Component
                 'title'=>$this->title,
                 'description'=>$this->description,
                 'post_type'=>$this->type,
+                'location'=>$this->location,
+                'slug'=>$this->slug,
+                'date'=>$this->date,
+                'start_time'=>$this->start_time,
+                'meta_title'=>$this->meta_title,
+                'meta_keyword'=>$this->meta_keyword,
+                'meta_description'=>$this->meta_description,
+                'end_time'=>$this->end_time,
                 'image'=>$image_path,
             ]);
             $text=($this->type==1)?'Events Added Successfully':'Campain Added Successfully';
             $this->dispatch('dismissmodal',message:$text ,parameter:'200');
         } catch (\Exception $e) {
             Log::info($e);
-            $this->dispatch('dismissmodal',message: $e,parameter:'400');
+            $this->dispatch('dismissmodal',message: $e->getMessage(),parameter:'400');
         }
     }
 
@@ -69,6 +78,14 @@ class Event extends Component
             $this->id=$event->id;
             $this->title=$event->title;
             $this->description=$event->description;
+            $this->location=$event->location;
+            $this->slug=$event->slug;
+            $this->date=$event->date;
+            $this->start_time=$event->start_time;
+            $this->end_time=$event->end_time;
+            $this->meta_title=$event->meta_title;
+            $this->meta_keyword=$event->meta_keyword;
+            $this->meta_description=$event->meta_description;
             $this->image_url=url($event->image);
             $this->model_title="Edit Event";
             $this->type=$event->post_type;
@@ -90,12 +107,20 @@ class Event extends Component
                 'post_type'=>$this->type,
                 'description'=>$this->description,
                 'image'=>$image,
+                'location'=>$this->location,
+                'slug'=>$this->slug,
+                'date'=>$this->date,
+                'start_time'=>$this->start_time,
+                'end_time'=>$this->end_time,
+                'meta_title'=>$this->meta_title,
+                'meta_keyword'=>$this->meta_keyword,
+                'meta_description'=>$this->meta_description,
             ]);
             $text=($this->type==1)?'Events Added Successfully':'Campain Added Successfully';
             $this->dispatch('dismissmodal',message: $text,parameter:'200');
         } catch (\Exception $e) {
             Log::info($e);
-            $this->dispatch('dismissmodal',message: $e,parameter:'400');
+            $this->dispatch('dismissmodal',message: $e->getMessage(),parameter:'400');
         }
     }
 

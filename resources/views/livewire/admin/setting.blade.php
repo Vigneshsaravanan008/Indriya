@@ -81,7 +81,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group" wire:ignore>
                                         <label>Address</label>
-                                        <textarea wire:model="address" class="form-control @error('address') is-invalid @enderror" id="summernote">{!!$address!!}</textarea>
+                                        <textarea wire:model="address" class="form-control @error('address') is-invalid @enderror">{!!$address!!}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -239,15 +239,6 @@
         setTimeout(() => {
             location.reload();
         }, 1500);
-    });
-</script>
-<script>
-    $('#summernote').summernote({
-        callbacks: {
-            onChange: function(contents, $editable) {
-                @this.setAddress(contents);
-            }
-        }   
     });
 </script>
 @endpush
