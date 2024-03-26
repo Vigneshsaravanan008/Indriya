@@ -153,7 +153,6 @@ class Event extends Component
     public function setContent($value)
     {
         $this->description_content=$value;
-        Log::info($value);
         return true;
     }
 }

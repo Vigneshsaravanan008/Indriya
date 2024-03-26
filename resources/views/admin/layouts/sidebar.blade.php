@@ -68,7 +68,7 @@
 
                 <li class="nav-header">Blogs</li>
                 <li class="nav-item">
-                    <a href="{{url("/")}}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-sticky-note nav-icon"></i>
                         <p>
                             Blogs
@@ -77,13 +77,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route("admin.event")}}" class="nav-link {{request()->routeIs('admin.event')?"active":""}}">
+                            <a href="{{route("admin.blogcategory")}}" class="nav-link {{request()->routeIs('admin.blogcategory')?"active":""}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Blogs Category</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route("admin.event")}}" class="nav-link {{request()->routeIs('admin.event')?"active":""}}">
+                            <a href="{{route("admin.blog")}}" class="nav-link {{request()->routeIs('admin.blog')?"active":""}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Blogs</p>
                             </a>

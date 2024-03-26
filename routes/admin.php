@@ -5,6 +5,8 @@ use App\Livewire\Admin\Login;
 use App\Livewire\Admin\Profile;
 use App\Livewire\Admin\Setting;
 use App\Livewire\Admin\Aboutus;
+use App\Livewire\Admin\Blog;
+use App\Livewire\Admin\BlogCategory;
 use App\Livewire\Admin\Contactus;
 use App\Livewire\Admin\Event;
 use App\Livewire\Admin\Pagemanagement;
@@ -31,6 +33,12 @@ Route::prefix('/admin')->group(function () {
 
         //Subscriptions
         Route::get("/subscription",Subscription::class)->name("admin.subscription");
+
+        //Blog Category
+        Route::get("/blog-category",BlogCategory::class)->name("admin.blogcategory");
+
+        //Blog
+        Route::get("/blog",Blog::class)->name("admin.blog");
 
         //Product Category
         Route::get("/product-category",ProductCategory::class)->name('admin.productcategory');

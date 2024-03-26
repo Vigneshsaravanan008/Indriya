@@ -22,9 +22,9 @@ return new class extends Migration
             $table->date("date")->nullable();
             $table->string("start_time")->nullable();
             $table->string("end_time")->nullable();
-            $table->string("meta_title")->nullable();
-            $table->string("meta_keyword")->nullable();
-            $table->string("meta_description")->nullable();
+            $table->longText("meta_title")->nullable();
+            $table->longText("meta_keyword")->nullable();
+            $table->longText("meta_description")->nullable();
             $table->string("author")->nullable();
             $table->string("author_image")->nullable();
             $table->text("description")->nullable();
