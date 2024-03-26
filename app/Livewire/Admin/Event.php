@@ -11,7 +11,7 @@ use Livewire\WithPagination;
 
 class Event extends Component
 {
-    public $title,$image,$image_url,$description,$type,$location,$date,$start_time,$end_time,$id,$model_title="Add Event",$slug,$meta_title,$meta_keyword,$meta_description;
+    public $title,$image,$image_url,$author_image_url,$description,$type,$author,$author_image,$location,$date,$start_time,$end_time,$id,$model_title="Add Event",$slug,$meta_title,$meta_keyword,$meta_description,$short_description,$description_content;
     
     use WithFileUploads,ImageTrait;
     use WithPagination;
@@ -19,7 +19,8 @@ class Event extends Component
     protected $rules = [
         'title'=>'required',
         'type'=>'required',
-        'description'=>'required',
+        'short_description'=>'required|max:500',
+        'description'=>'nullable',
         'slug'=>'required',
         'image'=>'nullable|image|max:2048',
     ];
@@ -43,17 +44,22 @@ class Event extends Component
 
     public function addEvent()
     {
+        // dd(request());
         $this->validate();
         try {
             $image_path=$this->imagePath($this->image,"event");
+            $author_image_path=$this->imagePath($this->author_image,"event");
 
             ModelsEvent::create([
                 'title'=>$this->title,
-                'description'=>$this->description,
+                'short_description'=>$this->short_description,
+                'description'=>$this->description_content,
                 'post_type'=>$this->type,
                 'location'=>$this->location,
                 'slug'=>$this->slug,
                 'date'=>$this->date,
+                'author'=>$this->author,
+                'author_image'=>$author_image_path,
                 'start_time'=>$this->start_time,
                 'meta_title'=>$this->meta_title,
                 'meta_keyword'=>$this->meta_keyword,
@@ -77,9 +83,12 @@ class Event extends Component
         {
             $this->id=$event->id;
             $this->title=$event->title;
+            $this->short_description=$event->short_description;
+            $this->description_content=$event->description;
             $this->description=$event->description;
             $this->location=$event->location;
             $this->slug=$event->slug;
+            $this->author=$event->author;
             $this->date=$event->date;
             $this->start_time=$event->start_time;
             $this->end_time=$event->end_time;
@@ -87,9 +96,10 @@ class Event extends Component
             $this->meta_keyword=$event->meta_keyword;
             $this->meta_description=$event->meta_description;
             $this->image_url=url($event->image);
+            $this->author_image_url=url($event->author_image);
             $this->model_title="Edit Event";
             $this->type=$event->post_type;
-            $this->dispatch("message",parameter:"200");
+            $this->dispatch("message",parameter:"200",description:$this->description_content);
         }else{
             $this->dispatch("message",message:"Event/Campain Not Found",parameter:"400");
         }
@@ -102,11 +112,16 @@ class Event extends Component
         $this->validate();
         try {
             $image=($this->image!=null)?$this->imagePath($this->image,"event"):ModelsEvent::where('id',$this->id)->pluck('image')->first();
+            $author_image_path=($this->author_image!=null)?$this->imagePath($this->author_image,"event"):ModelsEvent::where('id',$this->id)->pluck('author_image')->first();
+
             ModelsEvent::where('id',$this->id)->update([
                 'title'=>$this->title,
+                'short_description'=>$this->short_description,
+                'description'=>$this->description_content,
                 'post_type'=>$this->type,
-                'description'=>$this->description,
                 'image'=>$image,
+                'author'=>$this->author,
+                'author_image'=>$author_image_path,
                 'location'=>$this->location,
                 'slug'=>$this->slug,
                 'date'=>$this->date,
@@ -133,5 +148,12 @@ class Event extends Component
         }else{
             $this->dispatch('delete',parameter:"400",message:"Event/Campain Not Found");
         }
+    }
+
+    public function setContent($value)
+    {
+        $this->description_content=$value;
+        Log::info($value);
+        return true;
     }
 }

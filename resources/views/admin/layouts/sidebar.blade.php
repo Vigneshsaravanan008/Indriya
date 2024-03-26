@@ -66,6 +66,31 @@
                     </ul>
                 </li>
 
+                <li class="nav-header">Blogs</li>
+                <li class="nav-item">
+                    <a href="{{url("/")}}" class="nav-link">
+                        <i class="far fa-sticky-note nav-icon"></i>
+                        <p>
+                            Blogs
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route("admin.event")}}" class="nav-link {{request()->routeIs('admin.event')?"active":""}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Blogs Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route("admin.event")}}" class="nav-link {{request()->routeIs('admin.event')?"active":""}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Blogs</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 
                 <li class="nav-header">Forms</li>
                 <li class="nav-item">

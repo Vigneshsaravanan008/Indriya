@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer("post_type")->comment("1:Event;2:Campain");
             $table->string("title")->nullable();
             $table->string("slug")->nullable();
-            $table->longText("description")->nullable();
+            $table->text("short_description")->nullable();
             $table->string("image")->nullable();
             $table->string("location")->nullable();
             $table->date("date")->nullable();
@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string("meta_title")->nullable();
             $table->string("meta_keyword")->nullable();
             $table->string("meta_description")->nullable();
+            $table->string("author")->nullable();
+            $table->string("author_image")->nullable();
+            $table->text("description")->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
