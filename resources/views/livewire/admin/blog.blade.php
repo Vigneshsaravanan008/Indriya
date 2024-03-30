@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-3">
                     <div class="col-sm-6">
-                        <h1>Events</h1>
+                        <h1>Blogs</h1>
                         <div class="float-left">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -84,12 +84,27 @@
                     @csrf
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="Title">Title</label>
                                     <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        wire:model="name" id="name" placeholder="Enter Name">
+                                        wire:model="name" id="name" placeholder="Enter Title">
                                     @error('name')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Blog Category">Blog Category</label>
+                                    <select class="form-control event_type select2 @error('blog_category_id') is-invalid @enderror" wire:model="blog_category_id">
+                                        <option value="">Select Type</option>
+                                        @foreach($blog_categories as $blog_category)
+                                            <option value="{{$blog_category->id}}">{{$blog_category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('blog_category_id')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -105,25 +120,6 @@
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Image</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file"
-                                                class="custom-file-input  @error('banner_image') is-invalid @enderror"
-                                                wire:model="banner_image" id="exampleInputFile">
-                                            <label class="custom-file-label" for="exampleInputFile">Choose
-                                                Logo</label>
-                                        </div>
-                                    </div>
-                                    @error('banner_image')
-                                        <span class="error">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
-
 
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -142,6 +138,24 @@
                                     <textarea class="form-control summernote @error('description') is-invalid @enderror" rows="3" wire:model="description"
                                         placeholder="Enter Description"></textarea>
                                     @error('description')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Image</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file"
+                                                class="custom-file-input  @error('banner_image') is-invalid @enderror"
+                                                wire:model="banner_image" id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose
+                                                Logo</label>
+                                        </div>
+                                    </div>
+                                    @error('banner_image')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -201,11 +215,11 @@
                     <input type="hidden" wire:model="id" />
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="Title">Title</label>
                                     <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        wire:model="name" id="name" placeholder="Enter Name">
+                                        wire:model="name" id="name" placeholder="Enter Title">
                                     @error('name')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
@@ -218,6 +232,44 @@
                                     <input type="text" class="form-control @error('slug') is-invalid @enderror"
                                         wire:model="slug" id="slug" placeholder="Enter Slug">
                                     @error('slug')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Blog Category">Blog Category</label>
+                                    <select class="form-control event_type select2 @error('blog_category_id') is-invalid @enderror" wire:model="blog_category_id">
+                                        <option value="">Select Type</option>
+                                        @foreach($blog_categories as $blog_category)
+                                            <option value="{{$blog_category->id}}">{{$blog_category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('blog_category_id')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                           
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Short Description">Short Description</label>
+                                    <textarea class="form-control @error('short_description') is-invalid @enderror" rows="3"
+                                        wire:model="short_description" placeholder="Enter Short Description"></textarea>
+                                    @error('short_description')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group" wire:ignore>
+                                    <label for="Description">Description</label>
+                                    <textarea class="form-control summernote_text summernote @error('description_content') is-invalid @enderror" rows="3" wire:model="description_content"
+                                        placeholder="Enter Description"></textarea>
+                                    @error('description_content')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -240,28 +292,6 @@
                                         </div>
                                     </div>
                                     @error('banner_image')
-                                        <span class="error">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="Short Description">Short Description</label>
-                                    <textarea class="form-control @error('short_description') is-invalid @enderror" rows="3"
-                                        wire:model="short_description" placeholder="Enter Short Description"></textarea>
-                                    @error('short_description')
-                                        <span class="error">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="form-group" wire:ignore>
-                                    <label for="Description">Description</label>
-                                    <textarea class="form-control summernote_text summernote @error('description_content') is-invalid @enderror" rows="3" wire:model="description_content"
-                                        placeholder="Enter Description"></textarea>
-                                    @error('description_content')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -312,6 +342,7 @@
     <script>
         Livewire.on('calljs', function(data) {
             setTimeout(() => {
+                $(".select2").select2();
                 $('.summernote').summernote('focus');
             }, 1000);
         });
@@ -344,7 +375,7 @@
         });
 
         $(".event_type").on('click change', function(e) {
-            @this.setType(e.target.value);
+            @this.setBlogCategory(e.target.value);
             setTimeout(() => {
                 $(".select2").select2();
             }, 1000);

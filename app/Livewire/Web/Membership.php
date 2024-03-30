@@ -14,6 +14,7 @@ class Membership extends Component
     protected $rules = [
         'first_name' => 'required',
         'last_name' => 'required',
+        'email' => 'required',
         'phone_number' => 'required',
         'gender' => 'required',
         'location' => 'required',
@@ -34,6 +35,7 @@ class Membership extends Component
             ModelsMembership::create([
                 'first_name' => $this->first_name,
                 'last_name' => $this->last_name,
+                'email' => $this->email,
                 'phone_number' => $this->phone_number,
                 'gender' => $this->gender,
                 'location' => $this->location,
@@ -45,5 +47,15 @@ class Membership extends Component
             Log::info($e);
             $this->dispatch('dismissmodal', message: $e->getMessage(), parameter: '400');
         }
+    }
+
+    public function setCategory($value)
+    {
+        $this->categories=$value;
+    }
+    
+    public function setGender($value)
+    {
+        $this->gender=$value;
     }
 }

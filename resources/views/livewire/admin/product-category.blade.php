@@ -188,6 +188,48 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Slug">Slug</label>
+                                    <input type="text"
+                                        class="form-control @error('slug') is-invalid @enderror"
+                                        wire:model="slug" id="slug" placeholder="Enter Slug">
+                                    @error('slug')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Title">Meta Title</label>
+                                    <input type="text"
+                                        class="form-control @error('meta_title') is-invalid @enderror"
+                                        wire:model="meta_title" id="meta_title" placeholder="Enter Meta Title">
+                                    @error('meta_title')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Meta Keyword">Meta Keyword</label>
+                                    <textarea class="form-control @error('meta_keyword') is-invalid @enderror" rows="3" wire:model="meta_keyword"
+                                        placeholder="Enter Meta Keyword"></textarea>
+                                    @error('meta_keyword')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Meta Description">Meta Description</label>
+                                    <textarea class="form-control @error('meta_description') is-invalid @enderror" rows="3"
+                                        wire:model="meta_description" placeholder="Enter Meta Description"></textarea>
+                                    @error('meta_description')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer float-right">
@@ -218,6 +260,48 @@
                                         class="form-control @error('name') is-invalid @enderror"
                                         wire:model="name" id="name" placeholder="Enter Name">
                                     @error('name')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Slug">Slug</label>
+                                    <input type="text"
+                                        class="form-control @error('slug') is-invalid @enderror"
+                                        wire:model="slug" id="slug" placeholder="Enter Slug">
+                                    @error('slug')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Meta Title">Meta Title</label>
+                                    <input type="text"
+                                        class="form-control @error('meta_title') is-invalid @enderror"
+                                        wire:model="meta_title" id="meta_title" placeholder="Enter Meta Title">
+                                    @error('meta_title')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Meta Keyword">Meta Keyword</label>
+                                    <textarea class="form-control @error('meta_keyword') is-invalid @enderror" rows="3" wire:model="meta_keyword"
+                                        placeholder="Enter Meta Keyword"></textarea>
+                                    @error('meta_keyword')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Meta Description">Meta Description</label>
+                                    <textarea class="form-control @error('meta_description') is-invalid @enderror" rows="3"
+                                        wire:model="meta_description" placeholder="Enter Meta Description"></textarea>
+                                    @error('meta_description')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>

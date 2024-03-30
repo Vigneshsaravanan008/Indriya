@@ -19,6 +19,9 @@
                         <div class="float-right mb-3">
                             <button class="btn btn-primary" wire:click.prevent="calljs" data-toggle="modal"
                                 data-target="#modal-lg"><i class="fas fa-plus"></i></button>
+
+                            <button class="btn btn-primary" wire:click.prevent="calljs" data-toggle="modal"
+                                data-target="#modal-lg"><i class="fas fa-calendar"></i></button>
                         </div>
                     </div>
                 </div>
@@ -35,6 +38,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
+                                            <th>Date</th>
                                             <th>Event / Campaign</th>
                                             <th>Action</th>
                                         </tr>
@@ -44,6 +48,7 @@
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $event->title }}</td>
+                                                <td>{{ Carbon\Carbon::parse($event->date)->format('d M-Y') }}</td>
                                                 <td>{{ $event->post_type == 1 ? 'Event' : 'Campaign' }}</td>
                                                 <td>
                                                     <button class="btn btn-primary" wire:click.prevent="calljs"

@@ -43,17 +43,17 @@ class BlogCategory extends Component
 
     public function editBlogCategory($id)
     {
-        $product_category=ModelsBlogCategory::where('id',$id)->first();
+        $blog_category=ModelsBlogCategory::where('id',$id)->first();
 
-        if($product_category!=null)
+        if($blog_category!=null)
         {
-            $this->id=$product_category->id;
+            $this->id=$blog_category->id;
             $this->title="Edit BlogCategory";
-            $this->name=$product_category->name;
-            $this->slug=$product_category->slug;
-            $this->meta_title=$product_category->meta_title;
-            $this->meta_keyword=$product_category->meta_keyword;
-            $this->meta_description=$product_category->meta_description;
+            $this->name=$blog_category->name;
+            $this->slug=$blog_category->slug;
+            $this->meta_title=$blog_category->meta_title;
+            $this->meta_keyword=$blog_category->meta_keyword;
+            $this->meta_description=$blog_category->meta_description;
             $this->dispatch("message",parameter:"200");
         }else{
             $this->dispatch("message",message:"BlogCategory Not Found",parameter:"400");

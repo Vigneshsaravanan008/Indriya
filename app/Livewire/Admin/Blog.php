@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin;
 
 use App\Models\Blog as ModelsBlog;
+use App\Models\BlogCategory;
 use App\Traits\ImageTrait;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
@@ -11,7 +12,7 @@ use Livewire\WithPagination;
 
 class Blog extends Component
 {
-    public $name,$banner_image,$image_url,$description,$id,$model_title="Add Blogs",$slug,$meta_title,$meta_keyword,$meta_description,$short_description,$description_content;
+    public $name,$banner_image,$image_url,$description,$blog_category_id,$id,$model_title="Add Blogs",$slug,$meta_title,$meta_keyword,$meta_description,$short_description,$description_content;
 
     use WithFileUploads,ImageTrait;
     use WithPagination;
@@ -31,6 +32,11 @@ class Blog extends Component
         return view('livewire.admin.blog',compact("blogs","blog_categories"))->extends('admin.layouts.master')->section('content');
     }
 
+    public function setBlogCategory($value)
+    {
+        $this->blog_category_id=$value;
+    }
+
     public function calljs()
     {
         $this->dispatch('calljs');
@@ -45,6 +51,7 @@ class Blog extends Component
 
             ModelsBlog::create([
                 'name'=>$this->name,
+                'blog_category_id'=>$this->blog_category_id,
                 'short_description'=>$this->short_description,
                 'description'=>$this->description_content,
                 'slug'=>$this->slug,
@@ -69,6 +76,7 @@ class Blog extends Component
         {
             $this->id=$blog->id;
             $this->name=$blog->name;
+            $this->blog_category_id=$blog->blog_category_id;
             $this->short_description=$blog->short_description;
             $this->description_content=$blog->description;
             $this->description=$blog->description;
@@ -76,7 +84,7 @@ class Blog extends Component
             $this->meta_title=$blog->meta_title;
             $this->meta_keyword=$blog->meta_keyword;
             $this->meta_description=$blog->meta_description;
-            $this->image_url=url($blog->image);
+            $this->image_url=url($blog->banner_image);
             $this->model_title="Edit Blog";
             $this->dispatch("message",parameter:"200",description:$this->description_content);
         }else{
@@ -94,6 +102,7 @@ class Blog extends Component
 
             ModelsBlog::where('id',$this->id)->update([
                 'name'=>$this->name,
+                'blog_category_id'=>$this->blog_category_id,
                 'short_description'=>$this->short_description,
                 'description'=>$this->description_content,
                 'banner_image'=>$banner_image,

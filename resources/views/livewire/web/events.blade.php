@@ -39,7 +39,7 @@
                                         <span>{{Carbon\Carbon::parse($event->created_at)->format('d, M Y')}}</span>
                                     </li>
                                 </ul>
-                                <h4 class="mt-20 pb-25 bor-bottom"><a href="#"
+                                <h4 class="mt-20 pb-25 bor-bottom"><a href="{{route("site.viewevent",$event->slug)}}"
                                         class="primary-hover">{{$event->title}}</a></h4>
                                 <a class="mt-4" href="{{route("site.viewevent",$event->slug)}}"><span class="read-more fw-bold transition">Read
                                         More <i class="fa-solid fa-arrow-right ms-1"></i></span></a>

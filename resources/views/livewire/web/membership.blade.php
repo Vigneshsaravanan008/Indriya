@@ -223,39 +223,68 @@
                                 <div class="col-6">
                                     <label for="First Name">First Name*</label>
                                     <input id="first_name"  wire:model="first_name" type="text" placeholder="Your First Name">
+                                    @error('first_name')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="col-6">
                                     <label for="Last Name">Last Name*</label>
                                     <input id="last_name" wire:model="last_name" type="text" placeholder="Your Last Name">
+                                    @error('last_name')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <label for="email">Your Email*</label>
                                 <input id="email" wire:model="email" type="email" placeholder="Your Email">
+                                @error('email')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-12">
                                 <label for="phone_number">Your Phone*</label>
                                 <input id="phone_number" wire:model="phone_number" type="tel" placeholder="Your Phone Number">
+                                @error('phone_number')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </div>
-                            <div class="col-12">
+                            <div class="col-12" wire:ignore>
                                 <label for="gender">Gender*</label>
-                                <input id="gender" wire:model="gender" type="text" placeholder="Your Gender">
+                                <select wire:model="gender" class="form-control gender_dropdown" id="gender" >
+                                    <option value="">Select Gender</option>
+                                    <option value="1">Male </option>
+                                    <option value="2">Female</option>
+                                </select>
+                                @error('gender')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="col-12">
                                 <label for="location">Location*</label>
                                 <input id="location" wire:model="location" type="text" placeholder="Your Location">
+                                @error('location')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </div> 
-                           
-                            <label for="Categories">Categories*</label>
-                            <select wire:model="categories" class="form-control" id="subject">
-                                <option value="Individuals">Individuals</option>
-                                <option value="Corporates & Business Entities ">Corporates & Business Entities </option>
-                                <option value="Schools & Colleges">Schools & Colleges</option>
-                                <option value="Other Institutions">Other Institutions</option>
-                            </select>
+                           <div class="col-12" wire:ignore>
+                               <label for="Categories">Categories*</label>
+                               <select wire:model="categories" class="form-control category_dropdown" id="subject">
+                                   <option value="Individuals">Individuals</option>
+                                   <option value="Corporates & Business Entities ">Corporates & Business Entities </option>
+                                   <option value="Schools & Colleges">Schools & Colleges</option>
+                                   <option value="Other Institutions">Other Institutions</option>
+                               </select>
+                               @error('categories')
+                                   <span class="error">{{ $message }}</span>
+                               @enderror
+                           </div>
                             <div class="col-12">
                                 <label for="Organisation Name">Organisation Name*</label>
                                 <input id="organization_name" wire:model="organization_name" type="text" placeholder="Your Organisation Name">
+                                @error('organization_name')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="btn-two">
                                 <span class="btn-circle">
@@ -275,12 +304,24 @@
  </section>
 </div>
 @push('javascript')
-<script>
-    Livewire.on('dismissmodal', function(data) {
-        (data.parameter == 400) ? toastr.error(data.message): toastr.success(data.message);
-        setTimeout(() => {
-            location.reload();
-        }, 1500);
-    });
-</script>
+    <script>
+        Livewire.on('dismissmodal', function(data) {
+            $(".nice_select").niceSelect();
+            (data.parameter == 400) ? toastr.error(data.message): toastr.success(data.message);
+            setTimeout(() => {
+                if(data.parameter == 200)
+                {
+                    location.reload();
+                }
+            }, 1500);
+        });
+
+        $(".gender_dropdown").on("click change",function(e){
+            @this.setGender(e.target.value);
+        })
+        
+        $(".category_dropdown").on("click change",function(e){
+            @this.setCategory(e.target.value);
+        })
+    </script>
 @endpush

@@ -111,7 +111,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{url("/")}}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon far fa-sticky-note"></i>
                         <p>
                             Merchandise
@@ -120,7 +120,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url("/")}}" class="nav-link">
+                            <a href="{{route("admin.membership")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Receipents</p>
                             </a>

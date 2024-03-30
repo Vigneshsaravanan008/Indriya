@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\Web\Aboutus;
+use App\Livewire\Web\Blog;
+use App\Livewire\Web\BlogCategory;
 use App\Livewire\Web\Campaign;
 use App\Livewire\Web\Contactus;
 use App\Livewire\Web\Home;
@@ -36,6 +38,12 @@ Route::get("/membership",Membership::class)->name("site.membership");
 
 //Contactus
 Route::get("/contact-us",Contactus::class)->name("site.contactus");
+
+//Blogs
+Route::get('/blog',Blog::class)->name('site.blog');
+
+//Blog Category
+Route::get('/blog/{slug}',BlogCategory::class)->name('site.blogcategory');
 
 //Events or Campaings
 Route::get("/{slug}",ViewEvent::class)->name("site.viewevent");

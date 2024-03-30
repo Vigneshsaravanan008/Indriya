@@ -64,7 +64,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">Media Center</a></li>
+                        <li><a href="{{route('site.blog')}}">Blogs</a></li>
                         <li><a href="{{route("site.contactus")}}">Contact</a></li>
                     </ul>
                 </nav>

@@ -3,7 +3,7 @@
 @endsection
 <div>
 <section class="banner__inner-page bg-image pt-160 pb-160 bg-image"
-        data-background="{{asset("web-assets/assets/images/banner/banner-inner-page.jpg")}}">
+        data-background="{{asset($event->image)}}">
         <div class="container">
             <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{{$event->title}}</h2>
             <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -20,15 +20,11 @@
                 <div class="col-lg-8 order-2 order-lg-1">
                     <div class="blog__item blog-single__left-item shadow-none">
                         <div class="image">
-                            <img src="{{asset("web-assets/assets/images/event/event-single-image.jpg")}}" alt="image">
-                            <span class="blog-tag">22, Nov 2023</span>
+                            <img src="{{asset($event->image)}}" alt="image">
+                            <span class="blog-tag">{{Carbon\Carbon::parse($event->date)->format("d, M Y")}}</span>
                         </div>
                         <div class="blog__content p-0">
-                            <h4 class="mt-40 mb-30 fs-30">Rebecca's
-                                New
-                                Album
-                                Aid
-                                for the Needy</h4>
+                            <h4 class="mt-40 mb-30 fs-30">{{$event->title}}</h4>
                             <div class="event__content p-0 bor-bottom">
                                 <ul class="mb-4 gap-3">
                                     <li>
@@ -50,7 +46,7 @@
                                                 </clipPath>
                                             </defs>
                                         </svg>
-                                        <span>New york, USA</span>
+                                        <span>{{$event->location}}</span>
                                     </li>
                                     <li>
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -62,7 +58,7 @@
                                                 d="M14.6667 20.8543H7.33333C3.9875 20.8543 2.0625 18.9293 2.0625 15.5835V7.79183C2.0625 4.446 3.9875 2.521 7.33333 2.521H14.6667C18.0125 2.521 19.9375 4.446 19.9375 7.79183V15.5835C19.9375 18.9293 18.0125 20.8543 14.6667 20.8543ZM7.33333 3.896C4.71167 3.896 3.4375 5.17016 3.4375 7.79183V15.5835C3.4375 18.2052 4.71167 19.4793 7.33333 19.4793H14.6667C17.2883 19.4793 18.5625 18.2052 18.5625 15.5835V7.79183C18.5625 5.17016 17.2883 3.896 14.6667 3.896H7.33333Z"
                                                 fill="#F74F22"></path>
                                         </svg>
-                                        <span>22, Nov 2023</span>
+                                        <span>{{Carbon\Carbon::parse($event->date)->format("d, M Y")}}</span>
                                     </li>
                                     <li>
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -74,65 +70,20 @@
                                                 d="M11 0C4.93423 0 0 4.93423 0 11C0 17.0658 4.93423 22 11 22C17.0658 22 22 17.0658 22 11C22 4.93423 17.0658 0 11 0ZM11 20.2959C5.8749 20.2959 1.7041 16.1251 1.7041 11C1.7041 5.8749 5.8749 1.7041 11 1.7041C16.126 1.7041 20.2959 5.8749 20.2959 11C20.2959 16.1251 16.1251 20.2959 11 20.2959Z"
                                                 fill="#F74F22"></path>
                                         </svg>
-                                        <span>09:00 PM</span>
+                                        <span>{{Carbon\Carbon::parse($event->start_time)->format("h:i A")}} to {{Carbon\Carbon::parse($event->end_time)->format("h:i A")}}</span>
                                     </li>
                                 </ul>
                             </div>
-                            <p class="mb-20 mt-30">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore of magna aliqua. Ut enim ad minim
-                                veniam, made of owl the quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                ea dolor commodo consequat. Duis
-                                aute irure and dolor in reprehenderit.</p>
-                            <p class="mb-20">The is ipsum dolor sit amet consectetur adipiscing elit. Fusce eleifend
-                                porta arcu In hac habitasse the is platea augue
-                                thelorem turpoi dictumst. In lacus libero faucibus at malesuada sagittis placerat
-                                eros sed istincidunt augue ac ante
-                                rutrum sed the is sodales augue consequat.</p>
-                            <p class="mb-30">Nulla facilisi. Vestibulum tristique sem in eros eleifend imperdiet.
-                                Donec quis convallis neque. In id lacus pulvinar
-                                lacus, eget vulputate lectus. Ut viverra bibendum lorem, at tempus nibh mattis in.
-                                Sed a massa eget lacus consequat
-                                auctor.</p>
-                            <h4 class="fs-30 mb-20">Requirements for the Event</h4>
-                            <p class="mb-20 mt-20">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore of magna aliqua. Ut enim ad minim
-                                veniam, made of owl the quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                ea dolor commodo consequat. Duis
-                                aute irure and dolor in reprehenderit.</p>
-                            <p class="mb-30">The is ipsum dolor sit amet consectetur adipiscing elit. Fusce eleifend
-                                porta arcu In hac habitasse the is platea augue
-                                thelorem turpoi dictumst. In lacus libero faucibus at malesuada sagittis placerat
-                                eros sed istincidunt augue ac ante
-                                rutrum sed the is sodales augue consequat.</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="image">
-                                        <img src="{{asset("web-assets/assets/images/blog/blog-single-sm1.jpg")}}" alt="image">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="image">
-                                        <img src="{{asset("web-assets/assets/images/blog/blog-single-sm2.jpg")}}" alt="image">
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mt-30">The is ipsum dolor sit amet consectetur adipiscing elit. Fusce eleifend
-                                porta arcu In hac habitasse the is platea augue
-                                thelorem turpoi dictumst. In lacus libero faucibus at malesuada sagittis placerat
-                                eros sed istincidunt augue ac ante
-                                rutrum sed the is sodales augue consequat.</p>
+                           {!! $event->description!!}
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 order-1 order-lg-2">
                     <div class="event-single__right-item">
                         <div class="item shadow mb-30 text-center">
-                            <img src="{{asset("web-assets/assets/images/project/user.png")}}" alt="image">
-                            <h5 class="mt-20">Dianne Russell</h5>
-                            <span>Medical Assistant</span>
-                            <p class="mt-20">Adipiscing sed do tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim minim
-                                dolor in reprehenderit.</p>
+                            <img src="{{asset($event->author_image)}}" alt="image" width="100px" height="100px">
+                            <h5 class="mt-20">{{$event->author_name}}</h5>
+                            <p class="mt-20">{{$event->short_description}}</p>
                             <div class="social-icon mt-30">
                                 <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
                                 <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
@@ -167,7 +118,7 @@
                                         <h6 class="fs-16 fw-700 mb-1">
                                             Location:
                                         </h6>
-                                        3891 Ranchview California 62639
+                                        {{$event->location}}
                                     </div>
                                 </li>
                                 <li>
@@ -186,7 +137,7 @@
                                         <h6 class="fs-16 fw-700 mb-1">
                                             Event Time:
                                         </h6>
-                                        09:00 PM - 04:00 AM
+                                        {{Carbon\Carbon::parse($event->start_time)->format("h:i A")}} to {{Carbon\Carbon::parse($event->end_time)->format("h:i A")}}
                                     </div>
                                 </li>
                                 <li>
@@ -205,7 +156,7 @@
                                         <h6 class="fs-16 fw-700 mb-1">
                                             Event Date:
                                         </h6>
-                                        22, November 2023
+                                        {{Carbon\Carbon::parse($event->date)->format("d, M Y")}}
                                     </div>
                                 </li>
                             </ul>
@@ -242,186 +193,74 @@
                             <div class="btn-two">
                                 <span class="btn-circle">
                                 </span>
-                                <a href="#" class="btn-inner">
+                                <a href="{{route("site.contactus")}}" class="btn-inner">
                                     <span class="btn-text">
-                                        BOOK NOW
+                                        Contact Us
                                     </span>
                                 </a>
                             </div>
                         </div>
-                        <div class="contact__map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52808140.217054464!2d-161.46429918210544!3d36.114127922519884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sbd!4v1703719669841!5m2!1sen!2sbd"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
                     </div>
                 </div>
             </div>
+            @if(count($other_events)>0)
             <h3 class="fs-30 mb-60 mt-100 text-center">
                 Other Events
             </h3>
             <div class="row g-4">
-                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="event__inner-item">
-                        <div class="image">
-                            <img src="assets/images/blog/blog-image6.jpg" alt="image">
-                            <span class="blog-tag">22, Nov 2023</span>
-                        </div>
-                        <div class="blog__content pt-4">
-                            <ul>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_219_65)">
+                @foreach($other_events as $other_event)
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="event__inner-item">
+                            <div class="image">
+                                <img src="{{asset($other_event->image)}}" alt="image">
+                                <span class="blog-tag"> {{Carbon\Carbon::parse($other_event->date)->format("d, M Y")}}</span>
+                            </div>
+                            <div class="blog__content pt-4">
+                                <ul>
+                                    <li>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_219_65)">
+                                                <path
+                                                    d="M7.5 9.16669C7.5 9.82973 7.76339 10.4656 8.23223 10.9345C8.70107 11.4033 9.33696 11.6667 10 11.6667C10.663 11.6667 11.2989 11.4033 11.7678 10.9345C12.2366 10.4656 12.5 9.82973 12.5 9.16669C12.5 8.50365 12.2366 7.86776 11.7678 7.39892C11.2989 6.93008 10.663 6.66669 10 6.66669C9.33696 6.66669 8.70107 6.93008 8.23223 7.39892C7.76339 7.86776 7.5 8.50365 7.5 9.16669Z"
+                                                    stroke="#F74F22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M14.7148 13.8808L11.179 17.4167C10.8665 17.7289 10.4428 17.9042 10.0011 17.9042C9.55933 17.9042 9.13567 17.7289 8.82315 17.4167L5.28649 13.8808C4.35417 12.9485 3.71927 11.7606 3.46206 10.4674C3.20485 9.17419 3.3369 7.83376 3.84149 6.61561C4.34608 5.39745 5.20057 4.35628 6.29689 3.62376C7.39321 2.89123 8.68213 2.50024 10.0007 2.50024C11.3192 2.50024 12.6081 2.89123 13.7044 3.62376C14.8007 4.35628 15.6552 5.39745 16.1598 6.61561C16.6644 7.83376 16.7965 9.17419 16.5392 10.4674C16.282 11.7606 15.6471 12.9485 14.7148 13.8808Z"
+                                                    stroke="#F74F22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </g>
+                                            <defs>
+                                                <clipPath>
+                                                    <rect width="20" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <a href="{{route("site.viewevent",$other_event->slug)}}"><span class="primary-hover transition">{{$other_event->location}}</span></a>
+                                    </li>
+                                    <li>
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
                                             <path
-                                                d="M7.5 9.16669C7.5 9.82973 7.76339 10.4656 8.23223 10.9345C8.70107 11.4033 9.33696 11.6667 10 11.6667C10.663 11.6667 11.2989 11.4033 11.7678 10.9345C12.2366 10.4656 12.5 9.82973 12.5 9.16669C12.5 8.50365 12.2366 7.86776 11.7678 7.39892C11.2989 6.93008 10.663 6.66669 10 6.66669C9.33696 6.66669 8.70107 6.93008 8.23223 7.39892C7.76339 7.86776 7.5 8.50365 7.5 9.16669Z"
-                                                stroke="#F74F22" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                                d="M12.8846 11.1778L10.2354 9.191V5.14378C10.2354 4.73684 9.90649 4.4079 9.49955 4.4079C9.09261 4.4079 8.76367 4.73684 8.76367 5.14378V9.55898C8.76367 9.79076 8.87259 10.0093 9.05802 10.1477L12.0015 12.3553C12.1285 12.4509 12.2832 12.5026 12.4422 12.5025C12.6667 12.5025 12.8875 12.4016 13.0317 12.2074C13.2761 11.8828 13.2098 11.4214 12.8846 11.1778Z"
+                                                fill="#F74F22" />
                                             <path
-                                                d="M14.7148 13.8808L11.179 17.4167C10.8665 17.7289 10.4428 17.9042 10.0011 17.9042C9.55933 17.9042 9.13567 17.7289 8.82315 17.4167L5.28649 13.8808C4.35417 12.9485 3.71927 11.7606 3.46206 10.4674C3.20485 9.17419 3.3369 7.83376 3.84149 6.61561C4.34608 5.39745 5.20057 4.35628 6.29689 3.62376C7.39321 2.89123 8.68213 2.50024 10.0007 2.50024C11.3192 2.50024 12.6081 2.89123 13.7044 3.62376C14.8007 4.35628 15.6552 5.39745 16.1598 6.61561C16.6644 7.83376 16.7965 9.17419 16.5392 10.4674C16.282 11.7606 15.6471 12.9485 14.7148 13.8808Z"
-                                                stroke="#F74F22" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </g>
-                                        <defs>
-                                            <clipPath>
-                                                <rect width="20" height="20" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <a href="blog-single.html"><span class="primary-hover transition">New
-                                            york,
-                                            USA</span></a>
-                                </li>
-                                <li>
-                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.8846 11.1778L10.2354 9.191V5.14378C10.2354 4.73684 9.90649 4.4079 9.49955 4.4079C9.09261 4.4079 8.76367 4.73684 8.76367 5.14378V9.55898C8.76367 9.79076 8.87259 10.0093 9.05802 10.1477L12.0015 12.3553C12.1285 12.4509 12.2832 12.5026 12.4422 12.5025C12.6667 12.5025 12.8875 12.4016 13.0317 12.2074C13.2761 11.8828 13.2098 11.4214 12.8846 11.1778Z"
-                                            fill="#F74F22" />
-                                        <path
-                                            d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                                            fill="#F74F22" />
-                                    </svg>
-                                    <span>09:00 PM</span>
-                                </li>
-                            </ul>
-                            <h4 class="mt-15 mb-15"><a href="event-single.html" class="primary-hover">Rebecca's
-                                    New
-                                    Album
-                                    Aid
-                                    for the Needy</a></h4>
-                            <p>Embarrassing hidden in middle of All the lorem Ipsum on the Internet to repeat</p>
-                            <a class="mt-4 read-more fw-bold transition" href="event-single.html">EXPLORE MORE <i
-                                    class="fa-solid fa-arrow-right ms-1"></i></a>
+                                                d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
+                                                fill="#F74F22" />
+                                        </svg>
+                                        <span>{{Carbon\Carbon::parse($other_event->start_time)->format("h:i A")}} to {{Carbon\Carbon::parse($other_event->end_time)->format("h:i A")}}</span>
+                                    </li>
+                                </ul>
+                                <h4 class="mt-15 mb-15"><a href="{{route("site.viewevent",$other_event->slug)}}" class="primary-hover">{{$other_event->title}}</a></h4>
+                                <p>{{$other_event->short_description}}</p>
+                                <a class="mt-4 read-more fw-bold transition" href="{{route("site.viewevent",$other_event->slug)}}">EXPLORE MORE <i
+                                        class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <div class="event__inner-item">
-                        <div class="image">
-                            <img src="{{asset("web-assets/assets/images/blog/blog-image5.jpg")}}" alt="image">
-                            <span class="blog-tag">22, Nov 2023</span>
-                        </div>
-                        <div class="blog__content pt-4">
-                            <ul>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_219_65)">
-                                            <path
-                                                d="M7.5 9.16669C7.5 9.82973 7.76339 10.4656 8.23223 10.9345C8.70107 11.4033 9.33696 11.6667 10 11.6667C10.663 11.6667 11.2989 11.4033 11.7678 10.9345C12.2366 10.4656 12.5 9.82973 12.5 9.16669C12.5 8.50365 12.2366 7.86776 11.7678 7.39892C11.2989 6.93008 10.663 6.66669 10 6.66669C9.33696 6.66669 8.70107 6.93008 8.23223 7.39892C7.76339 7.86776 7.5 8.50365 7.5 9.16669Z"
-                                                stroke="#F74F22" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M14.7148 13.8808L11.179 17.4167C10.8665 17.7289 10.4428 17.9042 10.0011 17.9042C9.55933 17.9042 9.13567 17.7289 8.82315 17.4167L5.28649 13.8808C4.35417 12.9485 3.71927 11.7606 3.46206 10.4674C3.20485 9.17419 3.3369 7.83376 3.84149 6.61561C4.34608 5.39745 5.20057 4.35628 6.29689 3.62376C7.39321 2.89123 8.68213 2.50024 10.0007 2.50024C11.3192 2.50024 12.6081 2.89123 13.7044 3.62376C14.8007 4.35628 15.6552 5.39745 16.1598 6.61561C16.6644 7.83376 16.7965 9.17419 16.5392 10.4674C16.282 11.7606 15.6471 12.9485 14.7148 13.8808Z"
-                                                stroke="#F74F22" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </g>
-                                        <defs>
-                                            <clipPath>
-                                                <rect width="20" height="20" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <a href="#"><span class="primary-hover transition">New
-                                            york,
-                                            USA</span></a>
-                                </li>
-                                <li>
-                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.8846 11.1778L10.2354 9.191V5.14378C10.2354 4.73684 9.90649 4.4079 9.49955 4.4079C9.09261 4.4079 8.76367 4.73684 8.76367 5.14378V9.55898C8.76367 9.79076 8.87259 10.0093 9.05802 10.1477L12.0015 12.3553C12.1285 12.4509 12.2832 12.5026 12.4422 12.5025C12.6667 12.5025 12.8875 12.4016 13.0317 12.2074C13.2761 11.8828 13.2098 11.4214 12.8846 11.1778Z"
-                                            fill="#F74F22" />
-                                        <path
-                                            d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                                            fill="#F74F22" />
-                                    </svg>
-                                    <span>09:00 PM</span>
-                                </li>
-                            </ul>
-                            <h4 class="mt-15 mb-15"><a href="event-single.html" class="primary-hover">Rebecca's
-                                    Charity Album A Brilliant.</a></h4>
-                            <p>Embarrassing hidden in middle of All the lorem Ipsum on the Internet to repeat</p>
-                            <a class="mt-4 read-more fw-bold transition" href="event-single.html">EXPLORE MORE <i
-                                    class="fa-solid fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <div class="event__inner-item">
-                        <div class="image">
-                            <img src="{{asset("web-assets/assets/images/blog/blog-image4.jpg")}}" alt="image">
-                            <span class="blog-tag">22, Nov 2023</span>
-                        </div>
-                        <div class="blog__content pt-4">
-                            <ul>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_219_65)">
-                                            <path
-                                                d="M7.5 9.16669C7.5 9.82973 7.76339 10.4656 8.23223 10.9345C8.70107 11.4033 9.33696 11.6667 10 11.6667C10.663 11.6667 11.2989 11.4033 11.7678 10.9345C12.2366 10.4656 12.5 9.82973 12.5 9.16669C12.5 8.50365 12.2366 7.86776 11.7678 7.39892C11.2989 6.93008 10.663 6.66669 10 6.66669C9.33696 6.66669 8.70107 6.93008 8.23223 7.39892C7.76339 7.86776 7.5 8.50365 7.5 9.16669Z"
-                                                stroke="#F74F22" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M14.7148 13.8808L11.179 17.4167C10.8665 17.7289 10.4428 17.9042 10.0011 17.9042C9.55933 17.9042 9.13567 17.7289 8.82315 17.4167L5.28649 13.8808C4.35417 12.9485 3.71927 11.7606 3.46206 10.4674C3.20485 9.17419 3.3369 7.83376 3.84149 6.61561C4.34608 5.39745 5.20057 4.35628 6.29689 3.62376C7.39321 2.89123 8.68213 2.50024 10.0007 2.50024C11.3192 2.50024 12.6081 2.89123 13.7044 3.62376C14.8007 4.35628 15.6552 5.39745 16.1598 6.61561C16.6644 7.83376 16.7965 9.17419 16.5392 10.4674C16.282 11.7606 15.6471 12.9485 14.7148 13.8808Z"
-                                                stroke="#F74F22" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </g>
-                                        <defs>
-                                            <clipPath>
-                                                <rect width="20" height="20" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    <a href="#"><span class="primary-hover transition">New
-                                            york,
-                                            USA</span></a>
-                                </li>
-                                <li>
-                                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.8846 11.1778L10.2354 9.191V5.14378C10.2354 4.73684 9.90649 4.4079 9.49955 4.4079C9.09261 4.4079 8.76367 4.73684 8.76367 5.14378V9.55898C8.76367 9.79076 8.87259 10.0093 9.05802 10.1477L12.0015 12.3553C12.1285 12.4509 12.2832 12.5026 12.4422 12.5025C12.6667 12.5025 12.8875 12.4016 13.0317 12.2074C13.2761 11.8828 13.2098 11.4214 12.8846 11.1778Z"
-                                            fill="#F74F22" />
-                                        <path
-                                            d="M9.5 0C4.26138 0 0 4.26138 0 9.5C0 14.7386 4.26138 19 9.5 19C14.7386 19 19 14.7386 19 9.5C19 4.26138 14.7386 0 9.5 0ZM9.5 17.5283C5.07378 17.5283 1.47172 13.9262 1.47172 9.5C1.47172 5.07378 5.07378 1.47172 9.5 1.47172C13.927 1.47172 17.5283 5.07378 17.5283 9.5C17.5283 13.9262 13.9262 17.5283 9.5 17.5283Z"
-                                            fill="#F74F22" />
-                                    </svg>
-                                    <span>09:00 PM</span>
-                                </li>
-                            </ul>
-                            <h4 class="mt-15 mb-15"><a href="event-single.html" class="primary-hover">A Nation's
-                                    Benevolence Displayed</a></h4>
-                            <p>Embarrassing hidden in middle of All the lorem Ipsum on the Internet to repeat</p>
-                            <a class="mt-4 read-more fw-bold transition" href="event-single.html">EXPLORE MORE <i
-                                    class="fa-solid fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            @endif
         </div>
     </section>
 </div>

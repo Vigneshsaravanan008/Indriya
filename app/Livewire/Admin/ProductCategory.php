@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class ProductCategory extends Component
 {
-    public $name,$title="Add Product Category",$status,$id;
+    public $name,$title="Add Product Category",$status,$id,$meta_title,$meta_keyword,$meta_description,$slug;
 
     protected $rules=[
         'name'=>'required|max:225',
@@ -27,6 +27,10 @@ class ProductCategory extends Component
             ModelsProductCategory::create([
                 'name'=>$this->name,
                 'status'=>1,
+                'slug'=>$this->slug,
+                'meta_title'=>$this->meta_title,
+                'meta_keyword'=>$this->meta_keyword,
+                'meta_description'=>$this->meta_description,
             ]);
 
             $this->dispatch('dismissmodal',message: 'ProductCategory Added Successfully',parameter:'200');
@@ -45,6 +49,10 @@ class ProductCategory extends Component
             $this->id=$product_category->id;
             $this->title="Edit ProductCategory";
             $this->name=$product_category->name;
+            $this->slug=$product_category->slug;
+            $this->meta_title=$product_category->meta_title;
+            $this->meta_keyword=$product_category->meta_keyword;
+            $this->meta_description=$product_category->meta_description;
             $this->dispatch("message",parameter:"200");
         }else{
             $this->dispatch("message",message:"ProductCategory Not Found",parameter:"400");
@@ -59,6 +67,10 @@ class ProductCategory extends Component
         try {
             ModelsProductCategory::where('id',$this->id)->update([
                 'name'=>$this->name,
+                'slug'=>$this->slug,
+                'meta_title'=>$this->meta_title,
+                'meta_keyword'=>$this->meta_keyword,
+                'meta_description'=>$this->meta_description,
             ]);
 
             $this->dispatch('dismissmodal',message: 'ProductCategory Updated Successfully',parameter:'200');
