@@ -32,22 +32,21 @@
                             <h3 class="title mb-40 text-white">Quick Links</h3>
                             <ul class="link">
                                 <li class="mb-3">
-                                    <a href="about.html"><i class="fa-light fa-angles-right me-2"></i> About Us</a>
+                                    <a href="{{route("site.aboutus")}}"><i class="fa-light fa-angles-right me-2"></i> About Us</a>
                                 </li>
                                 <li class="mb-3">
-                                    <a href="cause.html"><i class="fa-light fa-angles-right me-2"></i> Our
-                                        Causes</a>
+                                    <a href="{{route("site.membership")}}"><i class="fa-light fa-angles-right me-2"></i> Memberships</a>
                                 </li>
                                 <li class="mb-3">
-                                    <a href="event.html"><i class="fa-light fa-angles-right me-2"></i> Upcoming
+                                    <a href="{{route("site.events")}}"><i class="fa-light fa-angles-right me-2"></i> Upcoming
                                         Event</a>
                                 </li>
                                 <li class="mb-3">
-                                    <a href="blog.html"><i class="fa-light fa-angles-right me-2"></i> Latest
-                                        Blog</a>
+                                    <a href="{{route("site.blog")}}"><i class="fa-light fa-angles-right me-2"></i>
+                                        Blogs</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html"><i class="fa-light fa-angles-right me-2"></i> Contact
+                                    <a href="{{route("site.contactus")}}"><i class="fa-light fa-angles-right me-2"></i> Contact
                                         Us</a>
                                 </li>
                             </ul>
@@ -57,27 +56,19 @@
                         <div class="footer__item">
                             <h3 class="title mb-40 text-white">Latest Post</h3>
                             <ul class="post">
-                                <li class="mb-3">
-                                    <div class="image">
-                                        <img src="{{asset("web-assets/assets/images/footer/footer-blog1.png")}}" alt="image">
-                                    </div>
-                                    <div class="con"><span>22, Nov 2023</span>
-                                        <a href="blog-single.html">
-                                            Provide Healthy Impoverished..
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="image">
-                                        <img src="{{asset("web-assets/assets/images/footer/footer-blog2.png")}}" alt="image">
-                                    </div>
-                                    <div class="con"><span>18, Nov 2023</span>
-                                        <a href="blog-single.html">
-                                            Rebecca’s New <br>
-                                            Album..
-                                        </a>
-                                    </div>
-                                </li>
+                                @foreach($latest_blogs as $latest_blog)
+                                    <li class="mb-3">
+                                        <div class="image">
+                                            <img src="{{asset($latest_blog->banner_image)}}" alt="image" width="100px" height="100px">
+                                        </div>
+                                        <div class="con">
+                                            <span>{{Carbon\Carbon::parse($latest_blog->created_at)->format('d, M Y')}}</span>
+                                            <a href="{{route('site.viewblog',$latest_blog->slug)}}">
+                                                {{$latest_blog->name}}
+                                            </a>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

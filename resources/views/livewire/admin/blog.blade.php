@@ -36,6 +36,7 @@
                                             <th>#</th>
                                             <th>Title</th>
                                             <th>Slug</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -45,6 +46,12 @@
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $blog->name }}</td>
                                                 <td>{{ $blog->slug }}</td>
+                                                <td>
+                                                    <label class="switch_box">
+                                                        <input type="checkbox" class="checkbox" data-id="{{$blog->id}}" {{($blog->status==1)?"checked":""}}>
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </td>
                                                 <td>
                                                     <button class="btn btn-primary" wire:click.prevent="calljs"
                                                         wire:click="editBlog({{ $blog->id }})"><i
@@ -404,6 +411,13 @@
                     @this.setContent(contents);
                 }
             }
+        });
+
+        $(document).ready(function(){
+            $(".checkbox").on('click',function(){
+                var value=$(this).data('id');
+                @this.statusBlog(value);
+            })
         });
     </script>
 @endpush

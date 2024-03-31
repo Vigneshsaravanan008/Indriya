@@ -11,11 +11,21 @@ class ViewEvent extends Component
     public function mount($slug)
     {
         $this->event=Event::where("slug",$slug)->first();
-        $this->other_events=Event::where("slug","!=",$slug)->where('post_type',$this->event->type)->take(3)->get()->shuffle();
+        if($this->event!=null)
+        {
+            $this->other_events=Event::where("slug","!=",$slug)->where('post_type',$this->event->type)->take(3)->get()->shuffle();
+        }else{
+            abort("404");
+        }
     }
 
     public function render()
     {
-        return view('livewire.web.view-event')->extends('web.layouts.master')->section('content');
+        if($this->event!=null)
+        {
+            return view('livewire.web.view-event')->extends('web.layouts.master')->section('content');
+        }else{
+            abort("404");
+        }
     }
 }

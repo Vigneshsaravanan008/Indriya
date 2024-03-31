@@ -136,4 +136,16 @@ class Blog extends Component
         return true;
     }
 
+    public function statusBlog($id)
+    {
+        try {
+            ModelsBlog::where("id",$id)->update([
+                'status'=>!ModelsBlog::where("id",$id)->pluck('status')->first()
+            ]);
+            $this->dispatch('dismissmodal',message: 'Blog Status Updated Successfully',parameter:'200');
+        } catch (\Throwable $th) {
+            $this->dispatch('dismissmodal',message: $th->getMessage(),parameter:'400');
+        }
+    }
+
 }

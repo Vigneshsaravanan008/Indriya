@@ -1,8 +1,11 @@
+@section("meta-details")
+    @include("web.seo.custom",["common"=>$this->blogcategory])
+@endsection
 <div>
     <section class="banner__inner-page bg-image pt-160 pb-160 bg-image"
     data-background="{{asset("web-assets/assets/images/banner/banner-inner-page.jpg")}}">
     <div class="container">
-        <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Blogs</h2>
+        <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">{{$blogcategory->name}}</h2>
         <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
             <a href="{{url('/')}}">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Blogs</span>
         </div>
@@ -33,9 +36,9 @@
                                     <span>{{Carbon\Carbon::parse($blog->created_at)->format('d ,M Y')}}</span>
                                 </li>
                             </ul>
-                            <h4 class="mt-20 mb-20"><a href="{{route('site.viewevent',$blog->slug)}}" class="primary-hover">{{$blog->name}}</a></h4>
+                            <h4 class="mt-20 mb-20"><a href="{{route('site.viewblog',$blog->slug)}}" class="primary-hover">{{$blog->name}}</a></h4>
                             <p>{{$blog->short_description}}</p>
-                            <a class="mt-4" href="{{route('site.viewevent',$blog->slug)}}"><span class="read-more fw-bold transition">Read
+                            <a class="mt-4" href="{{route('site.viewblog',$blog->slug)}}"><span class="read-more fw-bold transition">Read
                                     More <i class="fa-solid fa-arrow-right ms-1"></i></span></a>
                         </div>
                     </div>

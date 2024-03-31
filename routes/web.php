@@ -8,6 +8,7 @@ use App\Livewire\Web\Contactus;
 use App\Livewire\Web\Home;
 use App\Livewire\Web\Events;
 use App\Livewire\Web\Membership;
+use App\Livewire\Web\ViewBlog;
 use App\Livewire\Web\ViewEvent;
 use Illuminate\Support\Facades\Route;
 
@@ -43,7 +44,10 @@ Route::get("/contact-us",Contactus::class)->name("site.contactus");
 Route::get('/blog',Blog::class)->name('site.blog');
 
 //Blog Category
-Route::get('/blog/{slug}',BlogCategory::class)->name('site.blogcategory');
+Route::get('/category/{slug}',BlogCategory::class)->name('site.blogcategory');
+
+//Blog details
+Route::get('/blog/{slug}',ViewBlog::class)->name('site.viewblog');
 
 //Events or Campaings
 Route::get("/{slug}",ViewEvent::class)->name("site.viewevent");

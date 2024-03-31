@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Blog;
 use App\Models\Seo;
 use App\Models\Setting;
 use App\Models\Social;
@@ -28,6 +29,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             $setting = Setting::first();  
             $seo = Seo::first();  
             $social = Social::first();  
+            $latest_blogs=Blog::orderBy("id","desc")->take(2)->get();
             $image=Auth::guard("admin")->check()?Auth::guard("admin")->user()->image:""; 
             $ipaddress = '';
             if (isset($_SERVER['HTTP_CLIENT_IP']))
@@ -44,7 +46,7 @@ class ViewComposerServiceProvider extends ServiceProvider
                 $ipaddress = $_SERVER['REMOTE_ADDR'];
             else
                 $ipaddress = 'UNKNOWN';
-            $view->with(compact('setting','ipaddress','image','seo','social'));
+            $view->with(compact('setting','ipaddress','image','seo','social','latest_blogs'));
         });
     }
 }

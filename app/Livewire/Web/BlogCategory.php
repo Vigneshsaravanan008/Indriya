@@ -22,7 +22,13 @@ class BlogCategory extends Component
 
     public function render()
     {
+
         $blogs=Blog::where('blog_category_id',$this->blogcategory->id)->paginate(3);
-        return view('livewire.web.blog-category',compact('blogs'))->extends('web.layouts.master')->section('content');
+        if($blogs!=null)
+        {
+            return view('livewire.web.blog-category',compact('blogs'))->extends('web.layouts.master')->section('content');
+        }else{
+            abort("404");
+        }
     }
 }
