@@ -130,7 +130,7 @@
 
                 <li class="nav-header">Products</li>
                 <li class="nav-item">
-                    <a href="{{route("admin.productcategory")}}" class="nav-link">
+                    <a href="{{route("admin.productcategory")}}" class="nav-link {{request()->routeIs('admin.productcategory')?"active":""}}">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>
                             Products Category
@@ -138,7 +138,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url("/")}}" class="nav-link">
+                    <a href="{{route("admin.product")}}" class="nav-link {{request()->routeIs('admin.product')?"active":""}}">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>
                             Products

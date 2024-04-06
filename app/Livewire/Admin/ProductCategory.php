@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Models\ProductCategory as ModelsProductCategory;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ProductCategory extends Component
 {
@@ -13,7 +14,7 @@ class ProductCategory extends Component
     protected $rules=[
         'name'=>'required|max:225',
     ];
-
+    use WithPagination;
     public function render()
     {
         $product_categories=ModelsProductCategory::paginate(15);

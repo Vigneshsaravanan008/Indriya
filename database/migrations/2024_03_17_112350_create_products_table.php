@@ -15,11 +15,17 @@ return new class extends Migration
             $table->id();
             $table->integer("product_category_id");
             $table->string("name")->nullable();
-            $table->integer("slug")->default(1);
+            $table->string("slug")->nullable();
+            $table->integer("status")->default(1);
+            $table->string("image")->default(1);
             $table->longText("short_description")->nullable();
             $table->longText("description")->nullable();
             $table->decimal("price")->nullable();
+            $table->longText("meta_title")->nullable();
+            $table->longText("meta_keyword")->nullable();
+            $table->longText("meta_description")->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

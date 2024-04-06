@@ -61,7 +61,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="4" class="text-center">No Events/Campains</td>
+                                                <td colspan="5" class="text-center">No Events/Campains</td>
                                             </tr>
                                         @endforelse
                                     </tbody>
