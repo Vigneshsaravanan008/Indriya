@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('meta_keyword')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('og_image')->nullable();
+            $table->longText('google_tagmanager')->nullable();
+            $table->longText('google_analytics')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

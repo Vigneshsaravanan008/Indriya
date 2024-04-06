@@ -93,7 +93,7 @@
                                 <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
                                 <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
                                 <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a>
+                                {{-- <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a> --}}
                             </div>
                         </div>
                     </div>

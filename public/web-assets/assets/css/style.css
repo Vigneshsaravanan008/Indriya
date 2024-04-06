@@ -3928,3 +3928,10 @@ input {
 .footer__copytext p {
   color: var(--white);
 }
+.text_404 {
+  font-size:40px;
+}
+
+.error__item .image{
+  width:70%;
+}

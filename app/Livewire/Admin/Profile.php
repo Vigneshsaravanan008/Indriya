@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin;
 
 use App\Models\Admin;
+use App\Models\Setting;
 use App\Traits\ImageTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -22,10 +23,11 @@ class Profile extends Component
 
     public function render()
     {
+        $setting=Setting::first();
         $this->name=Auth::guard('admin')->user()->name;
         $this->email=Auth::guard('admin')->user()->email;
         $this->phone_number=Auth::guard('admin')->user()->phone_number;
-        $this->image_path=Auth::guard('admin')->user()->image;
+        $this->image_path=Auth::guard('admin')->user()->image ?? $setting->common_image;
         return view('livewire.admin.profile')->extends('admin.layouts.master')->section('content');
     }
 

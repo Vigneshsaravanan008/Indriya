@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/style.css') }}">
+    {!! $seo->google_tagmanager!!}
+    {!! $seo->google_analytics!!}
     @livewireStyles
 </head>
 

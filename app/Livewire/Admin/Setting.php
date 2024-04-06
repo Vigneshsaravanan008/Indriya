@@ -11,7 +11,7 @@ use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class Setting extends Component
 {
-    public $name,$email,$phone_number,$address,$address_content,$logo,$favicon,$common_image,$id,$logo_path,$favicon_path,$common_image_path,$meta_title,$meta_keyword,$meta_description,$og_image,$seo_id,$og_image_path,$facebook_url,$instagram_url,$twitter_url;
+    public $name,$email,$phone_number,$address,$address_content,$logo,$favicon,$common_image,$id,$logo_path,$favicon_path,$common_image_path,$meta_title,$meta_keyword,$meta_description,$og_image,$seo_id,$og_image_path,$facebook_url,$instagram_url,$twitter_url,$google_analytics,$google_tagmanager;
     use WithFileUploads,ImageTrait;
 
     protected $rules = [
@@ -33,6 +33,8 @@ class Setting extends Component
         {
             $this->id=$setting->id;
             $this->seo_id=@$seo->id;
+            $this->google_analytics=@$seo->google_analytics;
+            $this->google_tagmanager=@$seo->google_tagmanager;
             $this->name=$setting->name;
             $this->email=$setting->email;
             $this->phone_number=$setting->phone_number;
@@ -86,6 +88,8 @@ class Setting extends Component
             'meta_keyword'=>$this->meta_keyword,
             'meta_description'=>$this->meta_description,
             'og_image'=>$og_image,
+            'google_analytics'=>$this->google_analytics,
+            'google_tagmanager'=>$this->google_tagmanager,
         ];
         Seo::updateOrCreate(['id'=>$this->seo_id],$datas);
         $this->dispatch('dismiss',message: 'SEO Updated Successfully',parameter:'200');

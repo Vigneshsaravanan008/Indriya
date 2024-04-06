@@ -98,6 +98,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
+                                            <th>Product Category</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -107,6 +108,7 @@
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{$product->name}}</td>
+                                                <td>{{$product->productcategory->name}}</td>
                                                 <td>
                                                     <label class="switch_box">
                                                         <input type="checkbox" class="checkbox" data-id="{{$product->id}}" {{($product->status==1)?"checked":""}}>
@@ -117,6 +119,9 @@
                                                     <button class="btn btn-primary"
                                                         wire:click="editProduct({{ $product->id }})"><i
                                                             class="far fa-edit"></i></button>
+                                                    <button class="btn btn-warning"
+                                                        wire:click="editProduct({{ $product->id }})"><i
+                                                            class="far fa-eye"></i></button>
                                                     <button class="btn btn-danger delete"
                                                         data-value="{{ $product->id }}"><i
                                                             class="fas fa-trash-alt"></i></button>
@@ -124,7 +129,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="4" class="text-center">No Products</td>
+                                                <td colspan="5" class="text-center">No Products</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

@@ -38,6 +38,8 @@ class AdminSeeder extends Seeder
             'meta_keyword'=>'Indriya',
             'meta_description'=>'Indriya',
             'og_image'=>'uploads/companyimage/indriya.png',
+            'google_tagmanager'=>'uploads/companyimage/indriya.png',
+            'google_analytics'=>'uploads/companyimage/indriya.png',
         ]);
     }
 }

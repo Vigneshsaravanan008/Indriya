@@ -158,6 +158,7 @@
                                         <textarea wire:model="meta_description" class="form-control @error('meta_description') is-invalid @enderror">{!!$meta_description!!}</textarea>
                                     </div>
                                 </div>
+                                
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>OG Image</label>
@@ -171,6 +172,18 @@
                                             <label class="custom-file-label"
                                                 for="og_image">Choose file</label>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Google TagManager</label>
+                                        <textarea wire:model="google_tagmanager" class="form-control @error('google_tagmanager') is-invalid @enderror">{!!$google_tagmanager!!}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Google Analytics</label>
+                                        <textarea wire:model="google_analytics" class="form-control @error('google_analytics') is-invalid @enderror">{!!$google_analytics!!}</textarea>
                                     </div>
                                 </div>
                             </div>
