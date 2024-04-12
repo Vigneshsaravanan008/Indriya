@@ -36,7 +36,6 @@
                 <li><a href="{{$social->facebook_url}}"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="{{$social->twitter_url}}"><i class="fa-brands fa-twitter"></i></a></li>
                 <li><a href="{{$social->instagram_url}}"><i class="fa-brands fa-instagram"></i></a></li>
-                {{-- <li><a href="{{$social->}}"><i class="fa-brands fa-pinterest-p"></i></a></li> --}}
             </ul>
         </div>
     </div>
@@ -59,9 +58,8 @@
                         <li>
                             <a href="#">Membership</a>
                             <ul class="sub-menu">
-                                <li>
-                                    <a href="{{route("site.membership")}}">Recipients Registration</a>
-                                </li>
+                                <li><a href="{{route("site.membership")}}">Recipients Registration</a></li>
+                                <li><a href="{{route("site.membership")}}">Volunteer Registration</a></li>
                             </ul>
                         </li>
                         <li><a href="{{route('site.blog')}}">Blogs</a></li>
@@ -75,15 +73,6 @@
                 <a href="#" class="btn-inner">
                     <span class="btn-text">
                         DONATE NOW
-                    </span>
-                </a>
-            </div>
-            <div class="btn-two d-none d-lg-inline-block">
-                <span class=" btn-circle">
-                </span>
-                <a href="#" class="btn-inner">
-                    <span class="btn-text">
-                        Cart
                     </span>
                 </a>
             </div>

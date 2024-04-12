@@ -30,8 +30,7 @@
                                     stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h5 class="fs-16 mt-20"><a href="#0">House #5, Street Number #98, brasilia- 70000-000,
-                                Brazil.</a></h5>
+                        <h5 class="fs-16 mt-20"><a href="#0">{{$setting->address}}</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -46,8 +45,7 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h5 class="fs-16 mt-20"><a href="#0">support@example.com</a></h5>
-                        <h5 class="fs-16"><a href="#0">contact@example.com</a></h5>
+                        <h5 class="fs-16 mt-20"><a href="mailto:{{$setting->email}}">{{$setting->email}}</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -61,8 +59,7 @@
                                     fill="white" />
                             </svg>
                         </div>
-                        <h5 class="fs-16 mt-20"><a href="tel:+20866660112">+208-6666-0112</a></h5>
-                        <h5 class="fs-16"><a href="tel:+380961381877">+380961381877</a></h5>
+                        <h5 class="fs-16 mt-20"><a href="tel:{{$setting->phone_number}}">{{$setting->phone_number}}</a></h5>
                     </div>
                 </div>
             </div>

@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.css')}}">
+    {{-- <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css" /> --}}
+
     @yield("stylesheets")
     <link rel="icon" href="{{asset($setting->favicon)}}" />
     <link rel="shortcut icon" href="{{asset($setting->favicon)}}" />
@@ -66,6 +68,7 @@
     <script src="{{ asset('admin-assets/dist/js/datepicker.js') }}"></script>
     <script src="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <script src="{{ asset('admin-assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+    {{-- <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script> --}}
     <script>
         $('.datepicker').datepicker();
     </script>

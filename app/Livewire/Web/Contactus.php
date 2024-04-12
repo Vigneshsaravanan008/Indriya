@@ -4,6 +4,7 @@ namespace App\Livewire\Web;
 
 use App\Models\Contactus as ModelsContactus;
 use App\Models\PageManagement;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
@@ -20,8 +21,9 @@ class Contactus extends Component
 
     public function render()
     {
+        $setting=Setting::first();
         $page=PageManagement::where('url','/contact-us')->first();
-        return view('livewire.web.contactus',compact("page"))->extends('web.layouts.master')->section('content');
+        return view('livewire.web.contactus',compact("page","setting"))->extends('web.layouts.master')->section('content');
     }
 
     public function addContactus()

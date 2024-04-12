@@ -52,13 +52,13 @@
     </div>
     <ul class="banner-two__social">
         <li>
-            <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="{{$social->facebook_url}}"><i class="fa-brands fa-facebook-f"></i></a>
         </li>
         <li>
-            <a href="#0" class="active"><i class="fa-brands fa-twitter"></i></a>
+            <a href="{{$social->twitter_url}}" class="active"><i class="fa-brands fa-twitter"></i></a>
         </li>
         <li>
-            <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="{{$social->instagram_url}}"><i class="fa-brands fa-linkedin-in"></i></a>
         </li>
     </ul>
     <div class="banner-two__shape wow slideInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">

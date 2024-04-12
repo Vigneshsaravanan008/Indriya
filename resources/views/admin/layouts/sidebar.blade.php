@@ -161,6 +161,13 @@
                         <p>Settings</p>
                     </a>
                 </li>
+                
+                <li class="nav-item">
+                    <a href="{{route("admin.productgallery")}}" class="nav-link {{request()->routeIs('admin.productgallery')?"active":""}}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>Product Gallery</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
