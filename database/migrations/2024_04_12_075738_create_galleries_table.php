@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
+            $table->integer("page");
+            $table->string("document_path");
+            $table->string("document_name");
+            $table->integer("status")->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

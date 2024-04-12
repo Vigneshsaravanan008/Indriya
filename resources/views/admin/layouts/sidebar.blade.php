@@ -30,7 +30,7 @@
                 </li>
                
                 <li class="nav-item">
-                    <a href="{{url("/")}}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-image"></i>
                         <p>
                             Assets
@@ -42,6 +42,12 @@
                             <a href="{{route("admin.pagemanagement")}}" class="nav-link {{request()->routeIs('admin.pagemanagement')?"active":""}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Page Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route("admin.gallery")}}" class="nav-link {{request()->routeIs('admin.gallery')?"active":""}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Banners</p>
                             </a>
                         </li>
                     </ul>

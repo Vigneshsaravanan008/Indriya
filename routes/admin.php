@@ -9,6 +9,7 @@ use App\Livewire\Admin\Blog;
 use App\Livewire\Admin\BlogCategory;
 use App\Livewire\Admin\Contactus;
 use App\Livewire\Admin\Event;
+use App\Livewire\Admin\Gallery;
 use App\Livewire\Admin\Membership;
 use App\Livewire\Admin\Pagemanagement;
 use App\Livewire\Admin\Product;
@@ -46,7 +47,11 @@ Route::prefix('/admin')->group(function () {
         //Membership
         Route::get("/membership",Membership::class)->name("admin.membership");
 
+        //Product Gallery
         Route::get("/product-gallery",ProductGallery::class)->name("admin.productgallery");
+
+        //Gallery
+        Route::get("/gallery",Gallery::class)->name("admin.gallery");
 
         //Product Category
         Route::get("/product-category",ProductCategory::class)->name('admin.productcategory');
