@@ -131,6 +131,13 @@
                                 <p>Receipents</p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{route("admin.volunteer_membership")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Receipents</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

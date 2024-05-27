@@ -58,8 +58,12 @@
                         <li>
                             <a href="#">Membership</a>
                             <ul class="sub-menu">
-                                <li><a href="{{route("site.membership")}}">Recipients Registration</a></li>
-                                <li><a href="{{route("site.membership")}}">Volunteer Registration</a></li>
+                                <li>
+                                    <a href="{{route("site.membership")}}">Recipients Registration</a>
+                                </li>
+                                <li>
+                                    <a href="{{route("site.volunteership")}}">Volunteer Registration</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a href="{{route('site.blog')}}">Blogs</a></li>

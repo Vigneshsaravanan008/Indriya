@@ -119,9 +119,9 @@
                                                     <button class="btn btn-primary"
                                                         wire:click="editProduct({{ $product->id }})"><i
                                                             class="far fa-edit"></i></button>
-                                                    <button class="btn btn-warning"
-                                                        wire:click="editProduct({{ $product->id }})"><i
-                                                            class="far fa-eye"></i></button>
+                                                    <a class="btn btn-warning"
+                                                        href="{{route('admin.productdetail',$product->id)}}"><i
+                                                            class="far fa-eye"></i></a>
                                                     <button class="btn btn-danger delete"
                                                         data-value="{{ $product->id }}"><i
                                                             class="fas fa-trash-alt"></i></button>
@@ -190,6 +190,17 @@
                                         class="form-control @error('slug') is-invalid @enderror"
                                         wire:model="slug" id="slug" placeholder="Enter Slug">
                                     @error('slug')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Stocks">Stocks</label>
+                                    <input type="text"
+                                        class="form-control @error('total_stocks') is-invalid @enderror"
+                                        wire:model="total_stocks" id="total_stocks" placeholder="Enter total_stocks">
+                                    @error('total_stocks')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -331,6 +342,17 @@
                                         class="form-control @error('slug') is-invalid @enderror"
                                         wire:model="slug" id="slug" placeholder="Enter Slug">
                                     @error('slug')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Stocks">Stocks</label>
+                                    <input type="text"
+                                        class="form-control @error('total_stocks') is-invalid @enderror"
+                                        wire:model="total_stocks" id="total_stocks" placeholder="Enter total_stocks">
+                                    @error('total_stocks')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>

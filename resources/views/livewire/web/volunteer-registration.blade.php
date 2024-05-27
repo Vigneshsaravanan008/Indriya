@@ -2,19 +2,16 @@
 @include("web.seo.custom",["common"=>$page])
 @endsection
 <div>
-     <!-- Page banner area start here -->
      <section class="banner__inner-page bg-image pt-160 pb-160 bg-image"
      data-background="{{asset("web-assets/assets/images/banner/banner-inner-page.jpg")}}">
      <div class="container">
-         <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Membership</h2>
+         <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Volunteer</h2>
          <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-             <a href="{{url("/")}}">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Membership Registration</span>
+             <a href="{{url("/")}}">Home</a><span><i class="fa-regular fa-angles-right mx-2"></i>Volunteer Registration</span>
          </div>
      </div>
  </section>
- <!-- Page banner area end here -->
 
- <!-- Project single area start here -->
  <section class="project-single-area pt-120 pb-120">
      <div class="container">
          <div class="project-single__item">
@@ -40,7 +37,7 @@
                  istincidunt augue ac ante
                  rutrum sed the is sodales augue consequat.</p>
              <div class="row g-4 align-items-center">
-                 <div class="col-lg-5">
+                 {{-- <div class="col-lg-5">
                      <h3 class="fs-30 mb-20">The Installation Challenge</h3>
                      <p>Pharetra pellentesque turpis porta vel. Suspendisse aculis tempor. Quisque ullamcorper
                          feugiat elit</p>
@@ -214,78 +211,161 @@
                              </h6>
                          </div>
                      </div>
-                 </div>
-                 <div class="col-lg-7 order-1 order-lg-2">
+                 </div> --}}
+                 <div class="col-lg-12 order-1 order-lg-2">
                     <div class="contact__form">
                         <form wire:submit="addMembership">
                             @csrf
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="First Name">First Name*</label>
-                                    <input id="first_name"  wire:model="first_name" type="text" placeholder="Your First Name">
-                                    @error('first_name')
+                                    <label for="Name">Name*</label>
+                                    <input id="name"  wire:model="name" type="text" placeholder="Your Name">
+                                    @error('name')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="col-6">
-                                    <label for="Last Name">Last Name*</label>
-                                    <input id="last_name" wire:model="last_name" type="text" placeholder="Your Last Name">
-                                    @error('last_name')
+                                    <label for="Calling Number">Calling Number*</label>
+                                    <input id="calling_number" wire:model="calling_number" type="tel" placeholder="Your Calling Number">
+                                    @error('calling_number')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <label for="email">Your Email*</label>
-                                <input id="email" wire:model="email" type="email" placeholder="Your Email">
-                                @error('email')
-                                    <span class="error">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="col-12">
-                                <label for="phone_number">Your Phone*</label>
-                                <input id="phone_number" wire:model="phone_number" type="tel" placeholder="Your Phone Number">
-                                @error('phone_number')
-                                    <span class="error">{{ $message }}</span>
-                                @enderror
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="Whatsapp Number">Whatsapp Number*</label>
+                                    <input id="whatsapp_number" wire:model="whatsapp_number" type="text" placeholder="Your Whatsapp Number">
+                                    @error('whatsapp_number')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-6">
+                                    <label for="email">Your Email*</label>
+                                    <input id="email" wire:model="email" type="text" placeholder="Your Email">
+                                    @error('email')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="col-12" wire:ignore>
-                                <label for="gender">Gender*</label>
-                                <select wire:model="gender" class="form-control gender_dropdown" id="gender" >
-                                    <option value="">Select Gender</option>
-                                    <option value="1" selected>Male </option>
-                                    <option value="2">Female</option>
-                                </select>
-                                @error('gender')
+                                <label for="emergency_contact_person_name">Emergency contact person name (Mom, Dad, Brother, Sister, Husband, wife, Friends)*</label>
+                                <input id="emergency_contact_person_name" wire:model="emergency_contact_person_name" type="text" placeholder="Your Emergency Contact Person Name">
+                                @error('emergency_contact_person_name')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label for="location">Location*</label>
-                                <input id="location" wire:model="location" type="text" placeholder="Your Location">
-                                @error('location')
+                                <label for="Emergency contact number">Emergency contact number *</label>
+                                <input id="emergency_phone_no" wire:model="emergency_phone_no" type="text" placeholder="Your Emergency Phone No">
+                                @error('emergency_phone_no')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
                             </div> 
                            <div class="col-12" wire:ignore>
-                               <label for="Categories">Categories*</label>
-                               <select wire:model="categories" class="form-control category_dropdown" id="subject">
-                                   <option value="Individuals">Individuals</option>
-                                   <option value="Corporates & Business Entities ">Corporates & Business Entities </option>
-                                   <option value="Schools & Colleges">Schools & Colleges</option>
-                                   <option value="Other Institutions">Other Institutions</option>
-                               </select>
-                               @error('categories')
-                                   <span class="error">{{ $message }}</span>
-                               @enderror
+                               <label for="dob">Date of Birth*</label>
+                               <input id="dob" wire:model="dob" type="date" placeholder="Your Date of Birth">
+                                @error('dob')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                            </div>
                             <div class="col-12">
-                                <label for="Organisation Name">Organisation Name*</label>
-                                <input id="organization_name" wire:model="organization_name" type="text" placeholder="Your Organisation Name">
-                                @error('organization_name')
+                                <label for="Organisation Name">Blood Group*</label>
+                                <input id="blood_group" wire:model="blood_group" type="text" placeholder="Your Blood Group">
+                                
+                                @error('blood_group')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
                             </div>
+
+                            <div class="col-12">
+                                <label for="City">Which City do you live or want to volunteer? *</label>
+                                <select wire:model="city" class="form-control" id="city">
+                                    <option value="Bangalore">Bangalore</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Kolkata">Kolkata</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Pune">Pune</option>
+                                    <option value="Chennai">Chennai</option>
+                                    <option value="Hyderabad">Hyderabad</option>
+                                    <option value="Ahmedabad">Ahmedabad</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                
+                                @error('city')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label for="City">Other City</label>
+                                <input id="other_city" wire:model="other_city" type="text" placeholder="Your Other City">
+                                @error('other_city')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label for="Volunteer Before">Have you volunteered before?</label>
+                                <select wire:model="volunteer_before" class="form-control" id="volunteer_before">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                
+                                @error('volunteer_before')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label for="Volunteer Organization">Volunteer Organization Name</label>
+                                <input id="volunteer_other_name" wire:model="volunteer_other_name" type="text" placeholder="Your Volunteer Organization Name">
+                                @error('volunteer_other_name')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label for="skills">Do you have any special skills, which you would like to do while volunteering (Photography, poster designing, Website/App development, Drawing, Teaching, Dancing, Singing, Yoga, and Motivational Speaker etc.)?</label>
+                                <textarea id="skills" wire:model="skills" placeholder="Your Skills"></textarea>
+                                @error('skills')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="col-12">
+                                <label for="Available Week">Which days of week, are you available for volunteering? *</label>
+                                <select wire:model="available_week" class="form-control" id="available_week">
+                                    <option value="Any day of the week">Any day of the week</option>
+                                    <option value="Saturday">Saturday</option>
+                                    <option value="Sunday">Sunday</option>
+                                </select>
+                                
+                                @error('available_week')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label for="New Team">Would you like to start a new team in your city & lead the team? (All guidance & support will be provide by Indriya Foundation)</label>
+                                <textarea id="new_team_description" wire:model="new_team_description"></textarea>
+                                @error('new_team_description')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div> 
+                            
+                            <div class="col-12">
+                                <label for="Volunteer Description">Why you want to do volunteering? Please share if anything *</label>
+                                <textarea id="why_volunteering_description" wire:model="why_volunteering_description"></textarea>
+                                @error('why_volunteering_description')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="col-12">
+                                <label for="Suggestion">Suggestions if any?</label>
+                                <textarea id="suggestion_description" wire:model="suggestion_description"></textarea>
+                                @error('suggestion_description')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            
                             <div class="btn-two mt-4">
                                 <span class="btn-circle">
                                 </span>

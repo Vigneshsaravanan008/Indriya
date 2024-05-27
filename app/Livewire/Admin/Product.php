@@ -12,7 +12,7 @@ use Livewire\WithPagination;
 
 class Product extends Component
 {
-    public $product_category_id,$name,$title="Add Product",$short_description,$description,$description_content,$status,$id,$meta_title,$meta_keyword,$meta_description,$slug,$image_url,$image,$price;
+    public $product_category_id,$name,$title="Add Product",$short_description,$description,$description_content,$status,$id,$meta_title,$meta_keyword,$meta_description,$slug,$image_url,$image,$price,$total_stocks;
     use WithPagination,ImageTrait;
     use WithFileUploads;
 
@@ -49,6 +49,7 @@ class Product extends Component
                 'slug'=>$this->slug,
                 'image'=>$image_path,
                 'short_description'=>$this->short_description,
+                'total_stocks'=>$this->total_stocks,
                 'description'=>$this->description_content,
                 'price'=>$this->price,
                 'product_category_id'=>$this->product_category_id,
@@ -74,6 +75,7 @@ class Product extends Component
             $this->product_category_id=$product->product_category_id;
             $this->short_description=$product->short_description;
             $this->description_content=$product->description;
+            $this->total_stocks=$product->total_stocks;
             $this->description=$product->description;
             $this->slug=$product->slug;
             $this->price=$product->price;
@@ -101,6 +103,7 @@ class Product extends Component
                 'short_description'=>$this->short_description,
                 'description'=>$this->description_content,
                 'product_category_id'=>$this->product_category_id,
+                'total_stocks'=>$this->total_stocks,
                 'image'=>$image,
                 'price'=>$this->price,
                 'slug'=>$this->slug,

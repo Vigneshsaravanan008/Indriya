@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer("product_category_id");
             $table->string("name")->nullable();
             $table->string("slug")->nullable();
+            $table->string("total_stocks")->nullable();
             $table->integer("status")->default(1);
             $table->string("image")->default(1);
             $table->longText("short_description")->nullable();

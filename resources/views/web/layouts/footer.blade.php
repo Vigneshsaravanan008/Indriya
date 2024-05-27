@@ -16,7 +16,7 @@
                                 <img src="{{asset($setting->logo)}}" alt="image">
                             </a>
                             <p class="text-white">The INDRIYA FOUNDATION was founded in 2022 with the main goal of working for the social development and caring of individuals and groups who are suffering from a brain tumors.</p>
-                            <div class="btn-one mt-40">
+                            {{-- <div class="btn-one mt-40">
                                 <span class="btn-circle">
                                 </span>
                                 <a href="cause-single.html" class="btn-inner">
@@ -24,7 +24,7 @@
                                         DONATE NOW
                                     </span>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">

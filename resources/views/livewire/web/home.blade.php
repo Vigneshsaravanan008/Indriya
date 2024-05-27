@@ -9,17 +9,16 @@
                 <div class="slide-bg" data-background="{{asset("web-assets/assets/images/banner/banner-image1.jpg")}}"></div>
                 <div class="container">
                     <div class="banner-two__content">
-                        <h4 data-animation="fadeInUp" data-delay=".3s">Change The World Together</h4>
-                        <h1 data-animation="fadeInUp" data-delay=".5s">Support Kids & Elders <br> Give
-                            Generously</h1>
+                        <h4 data-animation="fadeInUp" data-delay=".3s"></h4>
+                        <h1 data-animation="fadeInUp" data-delay=".5s"></h1>
                         <div class="btn-one mt-50" data-animation="fadeInUp" data-delay="1s">
                             <span class="btn-circle">
                             </span>
-                            <a href="cause-single.html" class="btn-inner">
+                            {{-- <a href="cause-single.html" class="btn-inner">
                                 <span class="btn-text">
-                                    DONATE NOW
+                                    
                                 </span>
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                 </div>
@@ -28,17 +27,16 @@
                 <div class="slide-bg" data-background="{{asset("web-assets/assets/images/banner/banner-image2.jpg")}}"></div>
                 <div class="container">
                     <div class="banner-two__content">
-                        <h4 data-animation="fadeInUp" data-delay=".3s">Change The World Together</h4>
-                        <h1 data-animation="fadeInUp" data-delay=".5s">Support Kids & Elders <br> Give
-                            Generously</h1>
+                        <h4 data-animation="fadeInUp" data-delay=".3s"></h4>
+                        <h1 data-animation="fadeInUp" data-delay=".5s"></h1>
                         <div class="btn-one mt-50" data-animation="fadeInUp" data-delay="1s">
                             <span class="btn-circle">
                             </span>
-                            <a href="cause-single.html" class="btn-inner">
+                            {{-- <a href="cause-single.html" class="btn-inner">
                                 <span class="btn-text">
-                                    DONATE NOW
+                                    
                                 </span>
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                 </div>
@@ -66,42 +64,6 @@
     </div>
 </section>
 <!-- Banner area end here -->
-
-<!-- Service area start here -->
-<section class="service-area pt-100 pb-100 sub-bg">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                <div class="service__item">
-                    <div class="service__icon"><img src="{{asset("web-assets/assets/images/icon/service1.png")}}" alt="icon"></div>
-                    <div class="service__content">
-                        <h3 class="text-white">Kids Education</h3>
-                        <p class="text-white">Every is to be welcomed in certain circumstances</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <div class="service__item active">
-                    <div class="service__icon"><img src="{{asset("web-assets/assets/images/icon/service2.png")}}" alt="icon"></div>
-                    <div class="service__content">
-                        <h3 class="text-white">Healthy Food</h3>
-                        <p class="text-white">Every is to be welcomed in certain circumstances</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                <div class="service__item">
-                    <div class="service__icon"><img src="{{asset("web-assets/assets/images/icon/service3.png")}}" alt="icon"></div>
-                    <div class="service__content">
-                        <h3 class="text-white">Medical Help</h3>
-                        <p class="text-white">Every is to be welcomed in certain circumstances</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Service area end here -->
 
 <!-- About area start here -->
 <section class="about-area pt-120 pb-120">
@@ -136,10 +98,6 @@
                 </div>
                 <div class="about__content">
                     <div class="progress-area wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">
-                        <div class="progress__title mb-10">
-                            <h5 class="fs-16">Charity</h5>
-                            <span><span class="progress-count">80</span>%</span>
-                        </div>
                         <div class="progress">
                             <div class="progress-bar wow slideInLeft" data-wow-duration=".8s" role="progressbar"
                                 style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
@@ -1302,39 +1260,4 @@
 </section>
 <!-- Blog area end here -->
 
-<!-- Brand area start here -->
-<div class="brand-area pt-100 pb-100 wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
-    <div class="container">
-        <div class="swiper brand__slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="image">
-                        <img src="{{asset("web-assets/assets/images/brand/brand-image1.png")}}" alt="image">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image">
-                        <img src="{{asset("web-assets/assets/images/brand/brand-image2.png")}}" alt="image">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image">
-                        <img src="{{asset("web-assets/assets/images/brand/brand-image3.png")}}" alt="image">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image">
-                        <img src="{{asset("web-assets/assets/images/brand/brand-image4.png")}}" alt="image">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image">
-                        <img src="{{asset("web-assets/assets/images/brand/brand-image5.png")}}" alt="image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Brand area end here -->
 </div>

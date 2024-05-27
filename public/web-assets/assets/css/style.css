@@ -3830,7 +3830,7 @@ input {
   padding: 18px 20px;
   background-color: var(--sub-bg);
   border-radius: 4px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .contact__form form textarea {
   border: none;
@@ -3934,4 +3934,8 @@ input {
 
 .error__item .image{
   width:70%;
+}
+
+.contact__form form label{
+  margin-top:15px;
 }

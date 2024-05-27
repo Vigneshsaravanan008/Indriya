@@ -15,7 +15,9 @@ use App\Livewire\Admin\Pagemanagement;
 use App\Livewire\Admin\Product;
 use App\Livewire\Admin\ProductCategory;
 use App\Livewire\Admin\ProductGallery;
+use App\Livewire\Admin\ProductDetail;
 use App\Livewire\Admin\Subscription;
+use App\Livewire\Admin\VolunteerRegistration;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/admin')->group(function () {
@@ -46,6 +48,9 @@ Route::prefix('/admin')->group(function () {
 
         //Membership
         Route::get("/membership",Membership::class)->name("admin.membership");
+        
+        //VolunteerShip
+        Route::get("/volunteership",VolunteerRegistration::class)->name("admin.volunteer_membership");
 
         //Product Gallery
         Route::get("/product-gallery",ProductGallery::class)->name("admin.productgallery");
@@ -58,6 +63,18 @@ Route::prefix('/admin')->group(function () {
 
         //Product
         Route::get("/product",Product::class)->name("admin.product");
+
+        //Product Details
+        Route::get("/product/{id}/details",ProductDetail::class)->name("admin.productdetail");
+
+        //Product Gallery
+        Route::get("/product/{id}/gallery",ProductDetail::class)->name("admin.productgallery");
+
+        //Upload Product
+        Route::post("/upload-gallery",[ProductDetail::class,"uploadGallery"])->name("admin.productgallery");
+
+        //Product Additional Information
+        Route::get("/product/{id}/information",ProductDetail::class)->name("admin.productinformation");
 
         //Profile
         Route::get('/profile',Profile::class)->name('admin.profile');

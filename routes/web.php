@@ -10,6 +10,7 @@ use App\Livewire\Web\Events;
 use App\Livewire\Web\Membership;
 use App\Livewire\Web\ViewBlog;
 use App\Livewire\Web\ViewEvent;
+use App\Livewire\Web\VolunteerRegistration;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,9 @@ Route::get("/campaign",Campaign::class)->name("site.campaign");
 
 //Membership
 Route::get("/membership",Membership::class)->name("site.membership");
+
+//Membership
+Route::get("/volunteership",VolunteerRegistration::class)->name("site.volunteership");
 
 //Contactus
 Route::get("/contact-us",Contactus::class)->name("site.contactus");
