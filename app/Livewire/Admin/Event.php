@@ -22,7 +22,7 @@ class Event extends Component
         'short_description'=>'required|max:500',
         'description'=>'nullable',
         'slug'=>'required',
-        'image'=>'nullable|image|max:2048',
+        'image'=>'nullable|image',
     ];
 
     public function render()
@@ -44,11 +44,16 @@ class Event extends Component
 
     public function addEvent()
     {
-        // dd(request());
         $this->validate();
         try {
+            if($this->author_image!=null)
+            {
+                $author_image_path=$this->imagePath($this->author_image,"event");
+            }else{
+                $author_image_path=null;
+            }
+
             $image_path=$this->imagePath($this->image,"event");
-            $author_image_path=$this->imagePath($this->author_image,"event");
 
             ModelsEvent::create([
                 'title'=>$this->title,
