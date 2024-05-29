@@ -47,7 +47,12 @@ class Blog extends Component
     {
         $this->validate();
         try {
-            $banner_image=$this->imagePath($this->banner_image,"blog");
+            if($this->banner_image!=null)
+            {
+                $banner_image=$this->imagePath($this->banner_image,"blog");
+            }else{
+                $banner_image=null;
+            }
 
             ModelsBlog::create([
                 'name'=>$this->name,
