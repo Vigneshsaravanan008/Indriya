@@ -3,7 +3,7 @@
 @endsection
 <div>
     <section class="banner__inner-page bg-image pt-160 pb-160 bg-image"
-        data-background="{{asset("web-assets/assets/images/banner/banner-inner-page.jpg")}}">
+        data-background="{{asset("site-images/about/campaign.jpeg")}}">
         <div class="container">
             <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Campaign</h2>
             <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -22,7 +22,6 @@
                         <div class="blog__item">
                             <div class="image">
                                 <img src="{{asset($campaign->image)}}" alt="image">
-                                {{-- <span class="blog-tag">Education</span> --}}
                             </div>
                             <div class="blog__content pt-4">
                                 <ul>
@@ -41,7 +40,7 @@
                                 </ul>
                                 <h4 class="mt-20 pb-25 bor-bottom"><a href="{{route("site.viewevent",["slug"=>$campaign->slug])}}"
                                         class="primary-hover">{{$campaign->title}}</a></h4>
-                                <a class="mt-4" href="#"><span class="read-more fw-bold transition">Read
+                                <a class="mt-4" href="{{route("site.viewevent",["slug"=>$campaign->slug])}}"><span class="read-more fw-bold transition">Read
                                         More <i class="fa-solid fa-arrow-right ms-1"></i></span></a>
                             </div>
                         </div>

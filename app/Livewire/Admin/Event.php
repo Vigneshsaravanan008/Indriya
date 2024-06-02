@@ -100,8 +100,8 @@ class Event extends Component
             $this->meta_title=$event->meta_title;
             $this->meta_keyword=$event->meta_keyword;
             $this->meta_description=$event->meta_description;
-            $this->image_url=url($event->image);
-            $this->author_image_url=url($event->author_image);
+            $this->image_url=$event->image ? url($event->image):null;
+            $this->author_image_url=$event->author_image? url($event->author_image):null;
             $this->model_title="Edit Event";
             $this->type=$event->post_type;
             $this->dispatch("message",parameter:"200",description:$this->description_content);

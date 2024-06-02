@@ -14,6 +14,10 @@ class BlogCategory extends Component
     use WithPagination;
     protected $rules=[
         'name'=>'required|max:225',
+        'slug'=>'required',
+        'meta_title'=>'required|max:225',
+        'meta_keyword'=>'required|max:225',
+        'meta_description'=>'required|max:225',
     ];
     public function render()
     {

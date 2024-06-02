@@ -38,7 +38,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
-                                            <th>Date</th>
+                                            <th>Slug</th>
                                             <th>Event / Campaign</th>
                                             <th>Action</th>
                                         </tr>
@@ -48,7 +48,7 @@
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $event->title }}</td>
-                                                <td>{{ Carbon\Carbon::parse($event->date)->format('d M-Y') }}</td>
+                                                <td>{{ $event->slug }}</td>
                                                 <td>{{ $event->post_type == 1 ? 'Event' : 'Campaign' }}</td>
                                                 <td>
                                                     <button class="btn btn-primary" wire:click.prevent="calljs"
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Author Name">Author Name</label>
                                     <input type="text" class="form-control @error('author') is-invalid @enderror"
@@ -170,7 +170,7 @@
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -350,7 +350,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="Author Name">Author Name</label>
                                     <input type="text" class="form-control @error('author') is-invalid @enderror"
@@ -365,7 +365,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputFile">Author Image
                                         @if ($author_image_url != null)
-                                            <a href="{{ $author_image_url }}" target="_blank">View</a>
+                                            <a href="{{ @$author_image_url }}" target="_blank">View</a>
                                         @endif
                                     </label>
                                     <div class="input-group">
@@ -381,7 +381,7 @@
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="col-md-12">
                                 <div class="form-group">

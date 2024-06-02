@@ -19,10 +19,14 @@ class Blog extends Component
 
     protected $rules = [
         'name'=>'required',
+        'blog_category_id'=>'required',
         'short_description'=>'required|max:500',
         'description'=>'nullable',
         'slug'=>'required',
         'banner_image'=>'nullable|image|max:2048',
+        'meta_title'=>'required|max:225',
+        'meta_keyword'=>'required|max:225',
+        'meta_description'=>'required|max:225',
     ];
 
     public function render()
@@ -89,7 +93,7 @@ class Blog extends Component
             $this->meta_title=$blog->meta_title;
             $this->meta_keyword=$blog->meta_keyword;
             $this->meta_description=$blog->meta_description;
-            $this->image_url=url($blog->banner_image);
+            $this->image_url=$blog->banner_image? url($blog->banner_image):null;
             $this->model_title="Edit Blog";
             $this->dispatch("message",parameter:"200",description:$this->description_content);
         }else{
@@ -124,7 +128,7 @@ class Blog extends Component
         }
     }
 
-    public function deleteEvent($value)
+    public function deleteBlog($value)
     {
         if(ModelsBlog::where('id',$value)->exists())
         {

@@ -35,7 +35,10 @@
                                 class="fa-regular fa-angles-right ps-1"></i>
                         </h5>
                         <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Empowering Hope, Transforming Lives</h2>
-                        <p class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">Established in 2022, The Indriya Foundation is a charitable organisation dedicated to improving the lives of individuals and communities grappling with neurological conditions. Our mission is driven by a steadfast commitment to social progress, accessible education, and compassionate healthcare, empowering those navigating the complexities of these debilitating disorders.</p>
+                        <p align="justify" class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            Established in 2022, The Indriya Foundation is a charitable organisation dedicated to improving the lives of individuals and communities grappling with neurological conditions.<br> 
+                            Our mission is driven by a steadfast commitment to social progress, accessible education, and compassionate healthcare, empowering those navigating the complexities of these debilitating disorders.
+                        </p>
                     </div>
                     <div class="about__content">
                         <div class="row g-4 mt-10 wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -154,7 +157,7 @@
                                     class="fa-regular fa-angles-right ps-1"></i>
                             </h5>
                             <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Our Beliefs</h2>
-                            <p class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">We believe in the power of giving back to the community through education, support, and collaboration. Individuals with cognitive challenges require assistance not only with medical issues but also with various aspects of their lives. Education is fundamental to our approach. We endeavour to raise awareness and understanding of brain disorders, empowering individuals to make informed health decisions. Through our projects, we provide education to patients and caregivers, equipping them with the knowledge and skills to navigate these challenges effectively.
+                            <p align="justify" class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">We believe in the power of giving back to the community through education, support, and collaboration. <br>Individuals with cognitive challenges require assistance not only with medical issues but also with various aspects of their lives. Education is fundamental to our approach.<br> We endeavour to raise awareness and understanding of brain disorders, empowering individuals to make informed health decisions.<br> Through our projects, we provide education to patients and caregivers, equipping them with the knowledge and skills to navigate these challenges effectively.
                             </p>
                         </div>
                     </div>
@@ -166,15 +169,22 @@
     <div class="container">
         <div class="project-single__item">
             <h3 class="fs-30 mb-30">Creating Community</h3>
-            <p class="mb-20">Creating a welcoming and supportive community is integral to our mission. We strive to foster a sense of belonging and solidarity among individuals dealing with brain disorders. Through open discussions, community events, and collaborative initiatives, we bring individuals together to share experiences, offer mutual support, and work as a unified team</p>
+            <p align="justify" class="mb-20">Creating a welcoming and supportive community is integral to our mission. We strive to foster a sense of belonging and solidarity among individuals dealing with brain disorders. Through open discussions, community events, and collaborative initiatives, we bring individuals together to share experiences, offer mutual support, and work as a unified team</p>
         </div>
-    </div> 
     
-    <div class="container">
         <div class="project-single__item">
             <h3 class="fs-30 mb-30">Caring Support</h3>
-            <p class="mb-20">We understand the emotional and financial toll of receiving a diagnosis of a brain disorder. That's why we offer compassionate support to help individuals through every step of their journey. From financial assistance for medical bills to counselling services and support groups, we ensure that nobody faces these challenges alone.
+            <p align="justify" class="mb-20">We understand the emotional and financial toll of receiving a diagnosis of a brain disorder. That's why we offer compassionate support to help individuals through every step of their journey. From financial assistance for medical bills to counselling services and support groups, we ensure that nobody faces these challenges alone.
             </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="hilight-text mt-40 mb-30 sub-bg">
+            <p align="justify" class="p-2">Join us in our efforts to build a better future for those suffering from neurological disorders. Together, let's ensure that care, support, and education are accessible to everyone. By working hand in hand, we can make a tangible and lasting difference in the lives of those affected by these disorders.</p>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 20.3698H7.71428L2.57139 30.5546H10.2857L15.4286 20.3698V5.09253H0V20.3698Z" fill="#F74F22"></path>
+                <path d="M20.5703 5.09253V20.3698H28.2846L23.1417 30.5546H30.856L35.9989 20.3698V5.09253H20.5703Z" fill="#F74F22"></path>
+            </svg>
         </div>
     </div>
 
@@ -196,11 +206,11 @@
                     <div class="col-lg-6">
                         <div class="section-header mb-20">
                             <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Our Vision</h2>
-                            <p class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">The Indriya Foundation is more than just a charitable organisation; we are a symbol of hope and goodwill for individuals with neurological disorders. Motivated by our ideals and a deep-seated desire to make a meaningful difference, we are committed to building a better future for those afflicted by these disorders.
+                            <p class="wow fadeInUp" align="justify" data-wow-delay="400ms" data-wow-duration="1500ms">The Indriya Foundation is more than just a charitable organisation; we are a symbol of hope and goodwill for individuals with neurological disorders. Motivated by our ideals and a deep-seated desire to make a meaningful difference, we are committed to building a better future for those afflicted by these disorders.
                             </p>
 
                             <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Our Mission</h2>
-                            <p class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <p align="justify" class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                                 <svg class="me-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_20_5)">
@@ -259,79 +269,33 @@
         </div>
     </section>
 
+@if(isset($volunteer_registrations) && count($volunteer_registrations)>0)
+<section class="team-area pt-120 pb-120 sub-bg">
     <div class="container">
-        <div class="project-single__item">
-            <h3 class="fs-30 mb-30">Join Us</h3>
-            <p class="mb-20">Join us in our efforts to build a better future for those suffering from neurological disorders. Together, let's ensure that care, support, and education are accessible to everyone. By working hand in hand, we can make a tangible and lasting difference in the lives of those affected by these disorders.
-            </p>
+        <div class="section-header mb-60 text-center">
+            <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <i class="fa-regular fa-angles-left pe-1"></i> Our Volunteers <i
+                    class="fa-regular fa-angles-right ps-1"></i>
+            </h5>
+            <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Volunteers Our Precious
+                Assets</h2>
         </div>
-    </div>
-
-    <!-- Team area start here -->
-    <section class="team-area pt-120 pb-120 sub-bg">
-        <div class="container">
-            <div class="section-header mb-60 text-center">
-                <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <i class="fa-regular fa-angles-left pe-1"></i> Our Volunteers <i
-                        class="fa-regular fa-angles-right ps-1"></i>
-                </h5>
-                <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Volunteers Our Precious
-                    Assets</h2>
-            </div>
-            <div class="row g-4">
+        <div class="row g-4">
+            @foreach($volunteer_registrations as $volunteer)
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="team__item image">
-                        <img src="{{asset("web-assets/assets/images/team/team-image1.jpg")}}" alt="image">
+                        <img src="{{asset($volunteer->image)}}" alt="image">
                         <div class="team__content">
-                            <div class="social-icon mb-30">
-                                <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a>
-                            </div>
                             <div class="content">
-                                <h4><a href="team-single.html" class="primary-hover">Kristin Watson</a></h4>
+                                <h4><a href="javascript:void(0)" class="primary-hover">{{$volunteer->name}}</a></h4>
                                 <span>Volunteer</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <div class="team__item image">
-                        <img src="{{asset("web-assets/assets/images/team/team-image2.jpg")}}" alt="image">
-                        <div class="team__content">
-                            <div class="social-icon mb-30">
-                                <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="content">
-                                <h4><a href="team-single.html" class="primary-hover">Ralph Edwards</a></h4>
-                                <span>Volunteer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                    <div class="team__item image">
-                        <img src="{{asset("web-assets/assets/images/team/team-image3.jpg")}}" alt="image">
-                        <div class="team__content">
-                            <div class="social-icon mb-30">
-                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="content">
-                                <h4><a href="team-single.html" class="primary-hover">Leslie Alexander</a></h4>
-                                <span>Volunteer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-    </section>
-    <!-- Team area end here -->
+    </div>
+</section>
+@endif
 </div>

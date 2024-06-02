@@ -4,7 +4,7 @@
 <div>
      <!-- Page banner area start here -->
      <section class="banner__inner-page bg-image pt-160 pb-160 bg-image"
-     data-background="{{asset("web-assets/assets/images/banner/banner-inner-page.jpg")}}">
+     data-background="{{asset("site-images/about/membership.jpeg")}}">
      <div class="container">
          <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Membership</h2>
          <div class="breadcrumb-list wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">

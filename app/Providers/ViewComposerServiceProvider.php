@@ -25,7 +25,7 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer(['web.layouts.footer',"web.layouts.sidebar",'web.seo.metadetails','web.seo.custom','web.layouts.header','web.layouts.master','admin.auth.master','livewire.admin.profile','admin.layouts.footer','admin.layouts.sidebar','admin.layouts.master','admin.layouts.header','admin.layouts.footer','livewire.web.home'], function ($view) {
+        View::composer(['web.layouts.footer',"web.layouts.sidebar",'web.seo.metadetails','web.seo.custom','web.layouts.header','web.layouts.master','admin.auth.master','livewire.admin.profile','livewire.web.view-event','admin.layouts.footer','admin.layouts.sidebar','admin.layouts.master','admin.layouts.header','admin.layouts.footer','livewire.web.home'], function ($view) {
             $setting = Setting::first();  
             $seo = Seo::first();  
             $social = Social::first();  

@@ -53,7 +53,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="8" class="text-center">No Memberships</td>
+                                                <td colspan="9" class="text-center">No Memberships</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

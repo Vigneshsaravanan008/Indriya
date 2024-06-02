@@ -217,9 +217,10 @@
                 </div>
             </div>
         </div>
+        {{-- //data-background="{{asset("site-images/about/book-background.jpg")}}" --}}
         <div class="col-md-7">
-            <div class="video__right-item bg-image pt-120 pb-120 pl-80"
-                data-background="{{asset("site-images/about/book-background.jpg")}}">
+            <div class="video__right-item secondary-bg bg-image pt-120 pb-120 pl-80"
+                >
                 <div class="video__content">
                     <div class="section-header mb-40">
                         <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -260,34 +261,28 @@
         <div class="cause__slider-wrp">
             <div class="swiper cause__slider">
                 <div class="swiper-wrapper py-4">
-                    @foreach($campagins as $campaign)
+                    @foreach($campaigns as $campaign)
                         <div class="swiper-slide">
                             <div class="cause__item">
                                 <div class="cause__image image">
-                                    <img src="{{asset("web-assets/assets/images/cause/cause-image1.jpg")}}" alt="image">
-                                    <span class="cause-tag">Education</span>
+                                    <img src="{{asset($campaign->image)}}" alt="image">
                                 </div>
                                 <div class="cause__content">
-                                    <h4 class="mb-4 mt-20"><a href="cause-single.html" class="primary-hover">Rebecca's
-                                            New Album
-                                            Aid
-                                            for
-                                            the
-                                            Needy</a></h4>
+                                    <h4 class="mb-4 mt-20"><a href="{{route("site.viewevent",$campaign->slug)}}" class="primary-hover">
+                                           {{$campaign->title}}</a></h4>
                                     <div class="progress-area">
-                                        <div class="progress__item">
-                                            <div class="progress__content" style="width: 50%;"><span>50%</span></div>
-                                        </div>
                                         <div class="progress__goal mt-15">
-                                            <h6>Goal : <span>$40.000</span></h6>
-                                            <h6>Raised : <span>$20.000</span></h6>
+                                            <h6>Date : <span>
+                                            {{Carbon\Carbon::parse($campaign->created_at)->format('d, M Y')}}
+                                        </span></h6>
                                         </div>
                                         <div class="btn-three mt-30">
+                                            
                                             <span class="btn-circle">
                                             </span>
-                                            <a href="cause-single.html" class="btn-inner">
+                                            <a href="{{route("site.viewevent",$campaign->slug)}}" class="btn-inner">
                                                 <span class="btn-text">
-                                                    DONATE NOW
+                                                    Know More
                                                 </span>
                                             </a>
                                         </div>
@@ -301,75 +296,37 @@
         </div>
     </section>
 @endif
-<!-- Cause area end here -->
 
-<!-- Team area start here -->
-<section class="team-area pt-120 pb-120 sub-bg">
-    <div class="container">
-        <div class="section-header mb-60 text-center">
-            <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                <i class="fa-regular fa-angles-left pe-1"></i> Our Volunteers <i
-                    class="fa-regular fa-angles-right ps-1"></i>
-            </h5>
-            <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Volunteers Our Precious
-                Assets</h2>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
-                <div class="team__item image">
-                    <img src="{{asset("web-assets/assets/images/team/team-image1.jpg")}}" alt="image">
-                    <div class="team__content">
-                        <div class="social-icon mb-30">
-                            <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a>
-                        </div>
-                        <div class="content">
-                            <h4><a href="team-single.html" class="primary-hover">Kristin Watson</a></h4>
-                            <span>Volunteer</span>
-                        </div>
-                    </div>
-                </div>
+<!-- Cause area end here -->
+@if(isset($volunteer_registrations) && count($volunteer_registrations)>0)
+    <section class="team-area pt-120 pb-120 sub-bg">
+        <div class="container">
+            <div class="section-header mb-60 text-center">
+                <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <i class="fa-regular fa-angles-left pe-1"></i> Our Volunteers <i
+                        class="fa-regular fa-angles-right ps-1"></i>
+                </h5>
+                <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Volunteers Our Precious
+                    Assets</h2>
             </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-                <div class="team__item image">
-                    <img src="{{asset("web-assets/assets/images/team/team-image2.jpg")}}" alt="image">
-                    <div class="team__content">
-                        <div class="social-icon mb-30">
-                            <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a>
-                        </div>
-                        <div class="content">
-                            <h4><a href="team-single.html" class="primary-hover">Ralph Edwards</a></h4>
-                            <span>Volunteer</span>
+            <div class="row g-4">
+                @foreach($volunteer_registrations as $volunteer)
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="team__item image">
+                            <img src="{{asset($volunteer->image)}}" alt="image">
+                            <div class="team__content">
+                                <div class="content">
+                                    <h4><a href="javascript:void(0)" class="primary-hover">{{$volunteer->name}}</a></h4>
+                                    <span>Volunteer</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-                <div class="team__item image">
-                    <img src="{{asset("web-assets/assets/images/team/team-image3.jpg")}}" alt="image">
-                    <div class="team__content">
-                        <div class="social-icon mb-30">
-                            <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a>
-                        </div>
-                        <div class="content">
-                            <h4><a href="team-single.html" class="primary-hover">Leslie Alexander</a></h4>
-                            <span>Volunteer</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </div>
-</section>
-<!-- Team area end here -->
+    </section>
+@endif
 
 @if(isset($events) && count($events)>0)
     <section class="event-area pt-120 pb-120 bg-image" data-background="{{asset("web-assets/assets/images/bg/event-bg-image.jpg")}}">

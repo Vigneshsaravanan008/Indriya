@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string("volunteer_other_name")->nullable();
             $table->string("skills")->nullable();
             $table->string("available_week")->nullable();
+            $table->string("image")->nullable();
             $table->longText("new_team_description")->nullable();
             $table->longText("why_volunteering_description")->nullable();
             $table->longText("suggestion_description")->nullable();

@@ -13,7 +13,7 @@ class ViewEvent extends Component
         $this->event=Event::where("slug",$slug)->first();
         if($this->event!=null)
         {
-            $this->other_events=Event::where("slug","!=",$slug)->where('post_type',$this->event->type)->take(3)->get()->shuffle();
+            $this->other_events=Event::where("slug","!=",$slug)->where('post_type',$this->event->post_type)->take(3)->get()->shuffle();
         }else{
             abort("404");
         }

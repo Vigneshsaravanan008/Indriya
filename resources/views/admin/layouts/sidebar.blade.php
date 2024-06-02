@@ -128,20 +128,20 @@
                         <li class="nav-item">
                             <a href="{{route("admin.membership")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Receipents</p>
+                                <p>Membership</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{route("admin.volunteer_membership")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Receipents</p>
+                                <p>Volunteer Registrations</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="nav-header">Products</li>
+                {{-- <li class="nav-header">Products</li>
                 <li class="nav-item">
                     <a href="{{route("admin.productcategory")}}" class="nav-link {{request()->routeIs('admin.productcategory')?"active":""}}">
                         <i class="nav-icon fas fa-shopping-cart"></i>
@@ -165,7 +165,7 @@
                             Orders
                         </p>
                     </a>
-                </li>
+                </li> --}}
                 
                 <li class="nav-header">Settings & SEO</li>
                 <li class="nav-item">
@@ -175,12 +175,12 @@
                     </a>
                 </li>
                 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route("admin.productgallery")}}" class="nav-link {{request()->routeIs('admin.productgallery')?"active":""}}">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>Product Gallery</p>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
     </div>
