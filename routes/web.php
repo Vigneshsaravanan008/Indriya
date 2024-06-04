@@ -53,5 +53,8 @@ Route::get('/category/{slug}',BlogCategory::class)->name('site.blogcategory');
 //Blog details
 Route::get('/blog/{slug}',ViewBlog::class)->name('site.viewblog');
 
+//Thank you
+Route::view("/thank-you","web.layouts.thankyou")->name("site.thank-you");
+
 //Events or Campaings
 Route::get("/{slug}",ViewEvent::class)->name("site.viewevent");

@@ -3,7 +3,7 @@
 @endsection
 <div>
      <!-- Page banner area start here -->
-     <section class="banner__inner-page bg-image pt-160 pb-160 bg-image"
+     <section wire:ignore class="banner__inner-page bg-image pt-160 pb-160 bg-image"
      data-background="{{asset("site-images/about/membership.jpeg")}}">
      <div class="container">
          <h2 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">Membership</h2>
@@ -311,7 +311,7 @@
             setTimeout(() => {
                 if(data.parameter == 200)
                 {
-                    location.reload();
+                    window.location.href="/thank-you";
                 }
             }, 1500);
         });

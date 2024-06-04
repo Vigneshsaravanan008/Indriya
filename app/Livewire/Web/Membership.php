@@ -14,8 +14,8 @@ class Membership extends Component
     protected $rules = [
         'first_name' => 'required',
         'last_name' => 'required',
-        'email' => 'required',
-        'phone_number' => 'required',
+        'email' => 'email|required',
+        'phone_number' => 'required|integer',
         'gender' => 'required',
         'location' => 'required',
         'categories' => 'nullable',

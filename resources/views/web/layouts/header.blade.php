@@ -35,6 +35,7 @@
             <ul class="link-info">
                 <li><a href="{{$social->facebook_url}}"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="{{$social->twitter_url}}"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="{{$social->twitter_url}}"><i class="fa-brands fa-linkedin-in"></i></a></li>
                 <li><a href="{{$social->instagram_url}}"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
         </div>

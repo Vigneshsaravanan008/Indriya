@@ -136,7 +136,7 @@
     Livewire.on('dismissmodal', function(data) {
         (data.parameter == 400) ? toastr.error(data.message): toastr.success(data.message);
         setTimeout(() => {
-            location.reload();
+            window.location.href="/thank-you";
         }, 1500);
     });
 </script>

@@ -236,7 +236,7 @@
             setTimeout(() => {
                 if(data.parameter == 200)
                 {
-                    location.reload();
+                    window.location.href="/thank-you";
                 }
             }, 1500);
         });
