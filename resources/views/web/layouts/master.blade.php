@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('web-assets/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/front_assets/css/test.css') }}" >
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.3/build/css/intlTelInput.css"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.3/build/css/intlTelInput.css">
+    </noscript>
     {!! $seo->google_tagmanager!!}
     {!! $seo->google_analytics!!}
     @livewireStyles
@@ -68,7 +74,7 @@
     <script src="{{ asset('web-assets/assets/js/wow.min.js') }}"></script>
     <script src="{{ asset('web-assets/assets/js/magnific-popup.min.js') }}"></script>
     <script src="{{ asset('web-assets/assets/js/nice-select.min.js') }}"></script>
-    {{-- <script src="{{ asset('web-assets/assets/js/isotope.pkgd.min.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.3/build/js/intlTelInput.js"></script>
     <script src="{{ asset('web-assets/assets/js/jquery.waypoints.js') }}"></script>
     <script src="{{ asset('admin-assets/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('web-assets/assets/js/script.js') }}"></script>

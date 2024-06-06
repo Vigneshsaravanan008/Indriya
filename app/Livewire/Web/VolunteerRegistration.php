@@ -11,19 +11,19 @@ use App\Traits\ImageTrait;
 
 class VolunteerRegistration extends Component
 {
-    public $name, $calling_number,$whatsapp_number,$emergency_contact_person_name,$emergency_phone_no, $email, $volunteer_before,$volunteer_other_name, $dob, $blood_group, $city, $other_city,$skills,$available_week,$new_team_description,$why_volunteering_description,$suggestion_description,$image;
+    public $name,$country_code="91",$whatsapp_country_code="91",$emergency_country_code="91", $calling_number,$whatsapp_number,$emergency_contact_person_name,$emergency_phone_no, $email="", $volunteer_before="",$volunteer_other_name, $dob, $blood_group, $city="", $other_city,$skills,$available_week,$new_team_description,$why_volunteering_description,$suggestion_description,$image;
 
     use WithFileUploads,ImageTrait;
 
     protected $rules = [
         'name' => 'required',
-        'calling_number' => 'required',
+        'calling_number' => 'required|max:11',
         'whatsapp_number' => 'required',
-        'email' => 'email|required',
+        'email' => 'required|email',
         'emergency_contact_person_name' => 'required',
         'emergency_phone_no' => 'required|integer',
         'dob' => 'required',
-        'blood_group' => 'required',
+        'blood_group' => 'nullable',
         'city' => 'required',
         'other_city' => 'nullable',
         'volunteer_before' => 'required',
@@ -33,7 +33,7 @@ class VolunteerRegistration extends Component
         'available_week' => 'required',
         'new_team_description' => 'required',
         'why_volunteering_description' => 'required',
-        'suggestion_description' => 'required',
+        'suggestion_description' => 'nullable',
     ];
     
     public function render()
@@ -54,11 +54,11 @@ class VolunteerRegistration extends Component
             }
             ModelsVolunteerRegistration::create([
                 'name'=>$this->name,
-                'phone_no'=>$this->calling_number,
-                'whatsapp_no'=>$this->whatsapp_number,
+                'phone_no'=>"+".$this->country_code." ".$this->calling_number,
+                'whatsapp_no'=>"+".$this->whatsapp_country_code." ".$this->whatsapp_number,
                 'email'=>$this->email,
                 'emergency_contact_person_name'=>$this->emergency_contact_person_name,
-                'emergency_phone_no'=>$this->emergency_phone_no,
+                'emergency_phone_no'=>"+".$this->emergency_country_code." ".$this->emergency_phone_no,
                 'dob'=>$this->dob,
                 'blood_group'=>$this->blood_group,
                 'city'=>$this->city,
@@ -92,6 +92,26 @@ class VolunteerRegistration extends Component
     public function setVolunteerWeek($value)
     {
         $this->available_week=$value;
+    }
+
+    public function setCallingNumber($value)
+    {
+        $this->country_code=$value;
+    }
+
+    public function setWhatsappNumber($value)
+    {
+        $this->whatsapp_country_code=$value;
+    }
+
+    public function setEmergencyNumber($value)
+    {
+        $this->emergency_country_code=$value;
+    }
+
+    public function setBloodGroup($value)
+    {
+        $this->blood_group=$value;
     }
    
 }

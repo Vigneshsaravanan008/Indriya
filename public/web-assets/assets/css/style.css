@@ -3233,6 +3233,22 @@ input {
   background-color: var(--white);
   padding: 35px;
 }
+
+.volunteer__content {
+  background-color: transparent;
+  padding: 35px;
+}
+
+.volunteer_section .card{
+  border-radius: 30px;
+  border:1px solid orange;
+}
+
+.prefix {
+  font-size: 0.6em; 
+  vertical-align: super;
+}
+
 .event__content ul {
   display: flex;
   align-items: center;

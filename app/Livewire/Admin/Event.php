@@ -52,7 +52,6 @@ class Event extends Component
             }else{
                 $author_image_path=null;
             }
-
             $image_path=$this->imagePath($this->image,"event");
 
             ModelsEvent::create([

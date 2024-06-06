@@ -18,12 +18,6 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin-assets/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.css')}}">
-<<<<<<< HEAD
-    {{-- <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css" /> --}}
-=======
-    {{-- <link rel="stylesheet" href="{{ asset('admin-assets/plugins/dropzone/min/dropzone.min.css')}}"> --}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
->>>>>>> 86f12af (changes in volunteer)
 
     @yield("stylesheets")
     <link rel="icon" href="{{asset($setting->favicon)}}" />
