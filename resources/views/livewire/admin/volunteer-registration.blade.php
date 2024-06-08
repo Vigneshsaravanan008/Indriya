@@ -23,6 +23,31 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+                            <div class="card-header">
+                                <div class="row mt-2 p-0 m-0">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="text" wire:model.live="volunteer_name" class="form-control"
+                                                placeholder="Enter Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" wire:model.live="volunteer_email"
+                                                placeholder="Enter Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" wire:model.live="volunteer_number" id="volunteer_number"
+                                                placeholder="Enter PhoneNumber">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 text-left">
+                                        <button class="btn btn-primary" wire:click.prevent="export"><i class="fas fa-file-export">Export</i></button>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="card-body">
                                 <table class="table table-striped">
                                     <thead>
@@ -54,7 +79,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="5" class="text-center">No Volunteer Registrations</td>
+                                                <td colspan="8" class="text-center">No Volunteer Registrations</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

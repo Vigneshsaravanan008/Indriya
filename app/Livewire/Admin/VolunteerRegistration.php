@@ -2,19 +2,30 @@
 
 namespace App\Livewire\Admin;
 
+use App\Exports\VolunteerExport;
 use App\Models\VolunteerRegistration as ModelsVolunteerRegistration;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class VolunteerRegistration extends Component
 {
     public $name, $calling_number,$whatsapp_number,$emergency_contact_person_name,$emergency_phone_no, $email, $volunteer_before,$volunteer_other_name, $dob, $blood_group, $city, $other_city,$skills,$available_week,$new_team_description,$why_volunteering_description,$suggestion_description,$image_url;
+    public $volunteer_name="";
+    public $volunteer_email="";
+    public $volunteer_number="";
     use WithPagination;
 
     public function render()
     {
-        $volunteer_registrations=ModelsVolunteerRegistration::orderBy("id","desc")->paginate(15);
-        return view('livewire.admin.volunteer-registration',compact("volunteer_registrations"))->extends("admin.layouts.master")->section("content");
+        if($this->volunteer_name!=null || $this->volunteer_email !=null || $this->volunteer_number !=null)
+        {
+            $volunteer_registrations=ModelsVolunteerRegistration::where('name',"LIKE","%".$this->volunteer_name."%")->where('email',"LIKE","%".$this->volunteer_email."%")->where('phone_no',"LIKE","%".$this->volunteer_number."%")->paginate(15);
+            return view('livewire.admin.volunteer-registration',compact("volunteer_registrations"))->extends("admin.layouts.master")->section("content");
+        }else{
+            $volunteer_registrations=ModelsVolunteerRegistration::orderBy("id","desc")->paginate(15);
+            return view('livewire.admin.volunteer-registration',compact("volunteer_registrations"))->extends("admin.layouts.master")->section("content");
+        }
     }
 
     public function view($id)
@@ -46,6 +57,11 @@ class VolunteerRegistration extends Component
         }
 
         return true;    
+    }
+
+    public function export() 
+    {
+        return Excel::download(new VolunteerExport, 'Volunteers.xlsx');
     }
 
 }
