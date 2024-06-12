@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("facebook_url")->nullable();
             $table->string("instagram_url")->nullable();
+            $table->string("linkedin_url")->nullable();
             $table->string("twitter_url")->nullable();
             $table->timestamps();
             $table->softDeletes();

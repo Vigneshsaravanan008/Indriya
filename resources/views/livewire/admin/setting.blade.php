@@ -233,6 +233,15 @@
                                             placeholder="Enter Twitter Url">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>LinkedIn</label>
+                                        <input type="text"
+                                            class="form-control @error('linkedin_url') is-invalid @enderror"
+                                            wire:model="linkedin_url" id="linkedin_url"
+                                            placeholder="Enter Linkedin Url">
+                                    </div>
+                                </div>
                                
                             </div>
                             <div class="modal-footer float-right">

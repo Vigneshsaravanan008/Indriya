@@ -152,7 +152,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Image</label>
+                                    <label for="exampleInputFile">Image <span class="error">(Size 1920*400)</span></label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file"
@@ -284,7 +284,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Image
+                                    <label for="exampleInputFile">Image <span class="error">(Size 1920*400)</span>
                                         @if ($image_url != null)
                                             <a href="{{ $image_url }}" target="_blank">View</a>
                                         @endif

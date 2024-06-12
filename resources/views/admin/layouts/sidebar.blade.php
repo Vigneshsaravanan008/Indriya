@@ -20,14 +20,14 @@
 
                 <li class="nav-header">Assets</li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route("admin.aboutus")}}" class="nav-link {{request()->routeIs('admin.aboutus')?"active":""}}">
                         <i class="nav-icon far fa-address-card"></i>
                         <p>
                             About Us
                         </p>
                     </a>
-                </li>
+                </li> --}}
                
                 <li class="nav-item">
                     <a href="#" class="nav-link">

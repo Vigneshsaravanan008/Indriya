@@ -11,7 +11,7 @@ use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class Setting extends Component
 {
-    public $name,$email,$phone_number,$address,$address_content,$logo,$favicon,$common_image,$id,$logo_path,$favicon_path,$common_image_path,$meta_title,$meta_keyword,$meta_description,$og_image,$seo_id,$og_image_path,$facebook_url,$instagram_url,$twitter_url,$google_analytics,$google_tagmanager;
+    public $name,$email,$phone_number,$address,$address_content,$logo,$favicon,$common_image,$id,$logo_path,$favicon_path,$common_image_path,$meta_title,$meta_keyword,$meta_description,$og_image,$seo_id,$og_image_path,$facebook_url,$instagram_url,$twitter_url,$google_analytics,$google_tagmanager,$linkedin_url;
     use WithFileUploads,ImageTrait;
 
     protected $rules = [
@@ -49,6 +49,7 @@ class Setting extends Component
             $this->facebook_url=@$social->facebook_url;
             $this->instagram_url=@$social->instagram_url;
             $this->twitter_url=@$social->twitter_url;
+            $this->linkedin_url=@$social->linkedin_url;
             $this->dispatch("message",parameter:"200");
         }
         return view('livewire.admin.setting')->extends('admin.layouts.master')->section('content');
@@ -101,11 +102,13 @@ class Setting extends Component
             'twitter_url'=>'required',
             'facebook_url'=>'required',
             'instagram_url'=>'required',
+            'linkedin_url'=>'required',
         ]);
         $datas=[
             'twitter_url'=>$this->twitter_url,
             'facebook_url'=>$this->facebook_url,
             'instagram_url'=>$this->instagram_url,
+            'linkedin_url'=>$this->linkedin_url,
         ];
         Social::updateOrCreate(['id'=>$this->seo_id],$datas);
         $this->dispatch('dismiss',message: 'Social Links Updated Successfully',parameter:'200');

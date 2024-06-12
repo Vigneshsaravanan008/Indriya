@@ -19,7 +19,11 @@
                     @forelse($blogs as $blog)
                         <div class="blog__item mb-30">
                             <div class="image">
-                                <img src="{{asset($blog->banner_image)}}" alt="image">
+                                @if(file_exists( asset($blog->banner_image) ))
+                                    <img src="{{asset($blog->banner_image)}}" alt="image">
+                                @else
+                                    <img src="{{asset($setting->common_image)}}" alt="image">
+                                @endif
                                 <span class="blog-tag">{{$blog->blogCategory->name}}</span>
                             </div>
                             <div class="blog__content pt-4">
