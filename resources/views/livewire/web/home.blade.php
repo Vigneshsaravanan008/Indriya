@@ -9,10 +9,10 @@
                 <div class="slide-bg" data-background="{{asset("site-images/home/indriya_education.jpeg")}}"></div>
                 <div class="container">
                     <div class="banner-two__content">
-                        <h4 data-animation="fadeInUp" data-delay=".3s">
+                        <h4 data-animation="fadeInUp">
                             Change The World Together
                         </h4>
-                        <h1 data-animation="fadeInUp" data-delay=".5s">
+                        <h1 data-animation="fadeInUp">
                             Symbol of Hope and Goodwill
                         </h1>
                         <div class="btn-one mt-50" data-animation="fadeInUp" data-delay="1s">
@@ -78,7 +78,7 @@
 <section class="about-area pt-120 pb-120">
     <div class="container">
         <div class="row g-2 align-items-center">
-            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+            <div class="col-lg-6 wow fadeInLeft">
                 <div class="about__image">
                     <div class="dots about-dot__animation">
                         <img src="{{asset("web-assets/assets/images/shape/about-dot.png")}}" alt="dots">
@@ -90,15 +90,15 @@
             </div>
             <div class="col-lg-6">
                 <div class="section-header mb-20">
-                    <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <h5 class="wow fadeInUp">
                         <i class="fa-regular fa-angles-left pe-1"></i> ABOUT US <i
                             class="fa-regular fa-angles-right ps-1"></i>
                     </h5>
-                    <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Empowering Hope, Transforming Lives</h2>
-                    <p class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">Established in 2022, The Indriya Foundation is a charitable organisation dedicated to improving the lives of individuals and communities grappling with neurological conditions. Our mission is driven by a steadfast commitment to social progress, accessible education, and compassionate healthcare, empowering those navigating the complexities of these debilitating disorders.</p>
+                    <h2 class="wow fadeInUp">Empowering Hope, Transforming Lives</h2>
+                    <p class="wow fadeInUp">Established in 2022, The Indriya Foundation is a charitable organisation dedicated to improving the lives of individuals and communities grappling with neurological conditions. Our mission is driven by a steadfast commitment to social progress, accessible education, and compassionate healthcare, empowering those navigating the complexities of these debilitating disorders.</p>
                 </div>
                 <div class="about__content">
-                    <div class="row g-4 mt-10 wow fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="row g-4 mt-10 wow fadeInDown">
                         <div class="col-6">
                             <h6 class="fs-14">
                                 <svg class="me-1" width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -184,8 +184,7 @@
                             </h6>
                         </div>
                     </div>
-                    <div class="d-flex align-content-center flex-wrap gap-4 mt-40 wow fadeInDown"
-                        data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="d-flex align-content-center flex-wrap gap-4 mt-40 wow fadeInDown">
                         <div class="btn-two">
                             <span class="btn-circle">
                             </span>
@@ -217,19 +216,17 @@
                 </div>
             </div>
         </div>
-        {{-- //data-background="{{asset("site-images/about/book-background.jpg")}}" --}}
         <div class="col-md-7">
-            <div class="video__right-item secondary-bg bg-image pt-120 pb-120 pl-80"
-                >
+            <div class="video__right-item secondary-bg bg-image pt-120 pb-120 pl-80">
                 <div class="video__content">
                     <div class="section-header mb-40">
-                        <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <h5 class="wow fadeInUp">
                             <i class="fa-regular fa-angles-left pe-1"></i> Watch Videos <i
                                 class="fa-regular fa-angles-right ps-1"></i>
                         </h5>
-                        <h2 class="text-white wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <h2 class="text-white wow fadeInUp">
                             Enhance the Depth of Meaning in Your Life and Family</h2>
-                        <p class="text-white wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">The Indriya Foundation is committed to enhancing the lives of individuals and communities affected by neurological conditions through compassionate support, accessible education, and collaborative initiatives. </p>
+                        <p class="text-white wow fadeInUp">The Indriya Foundation is committed to enhancing the lives of individuals and communities affected by neurological conditions through compassionate support, accessible education, and collaborative initiatives. </p>
                     </div>
                 </div>
             </div>
@@ -244,14 +241,14 @@
         <div class="container">
             <div class="d-flex align-items-center justify-content-between flex-wrap gap-4 mb-40">
                 <div class="section-header">
-                    <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <h5 class="wow fadeInUp">
                         <i class="fa-regular fa-angles-left pe-1"></i> RECENT CAUSES <i
                             class="fa-regular fa-angles-right ps-1"></i>
                     </h5>
-                    <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Introducing Our
+                    <h2 class="wow fadeInUp">Introducing Our
                         Campaigns</h2>
                 </div>
-                <div class="arry-btn wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                <div class="arry-btn wow fadeInUp">
                     <button class="arry-prev cause__arry-prev"><i class="fa-regular fa-chevron-left"></i></button>
                     <button class="arry-next cause__arry-next active ml-10"><i
                             class="fa-regular fa-chevron-right"></i></button>
@@ -302,16 +299,16 @@
     <section class="team-area pt-120 pb-120 sub-bg">
         <div class="container">
             <div class="section-header mb-60 text-center">
-                <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <h5 class="wow fadeInUp">
                     <i class="fa-regular fa-angles-left pe-1"></i> Our Volunteers <i
                         class="fa-regular fa-angles-right ps-1"></i>
                 </h5>
-                <h2 class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Volunteers Our Precious
+                <h2 class="wow fadeInUp">Volunteers Our Precious
                     Assets</h2>
             </div>
             <div class="row g-4">
                 @foreach($volunteer_registrations as $volunteer)
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="col-lg-4 col-sm-6 wow fadeInUp">
                         <div class="team__item image">
                             <img src="{{asset($volunteer->image)}}" alt="image">
                             <div class="team__content">
@@ -332,16 +329,16 @@
     <section class="event-area pt-120 pb-120 bg-image" data-background="{{asset("web-assets/assets/images/bg/event-bg-image.jpg")}}">
         <div class="container-fluid">
             <div class="section-header text-center mb-60">
-                <h5 class="wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                <h5 class="wow fadeInUp">
                     <i class="fa-regular fa-angles-left pe-1"></i> Our EVENT <i
                         class="fa-regular fa-angles-right ps-1"></i>
                 </h5>
-                <h2 class="text-white wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Numerous
+                <h2 class="text-white wow fadeInUp">Numerous
                     Events Gathering</h2>
             </div>
             <div class="row g-4">
                 @foreach($events as $event)
-                    <div class="col-xl-6 wow fadeInDown" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="col-xl-6 wow fadeInDown">
                         <div class="event__item h-100">
                             <div class="image h-100">
                                 <img class="h-100" src="{{asset("web-assets/assets/images/event/event-image1.jpg")}}" alt="image">

@@ -93,7 +93,7 @@ class Blog extends Component
             $this->meta_title=$blog->meta_title;
             $this->meta_keyword=$blog->meta_keyword;
             $this->meta_description=$blog->meta_description;
-            $this->image_url=$blog->banner_image? url($blog->banner_image):null;
+            $this->image_url=$blog->banner_image? asset($blog->banner_image):null;
             $this->model_title="Edit Blog";
             $this->dispatch("message",parameter:"200",description:$this->description_content);
         }else{

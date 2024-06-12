@@ -65,7 +65,7 @@ class Pagemanagement extends Component
             $this->meta_title=$page_management->meta_title;
             $this->meta_keyword=$page_management->meta_keyword;
             $this->meta_description=$page_management->meta_description;
-            $this->image_url=url($page_management->og_image);
+            $this->image_url=asset($page_management->og_image);
             $this->model_title="Edit PageManagement";
             $this->dispatch("message",parameter:"200");
         }else{
