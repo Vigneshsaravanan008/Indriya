@@ -35,16 +35,16 @@
                                     <a href="{{route("site.aboutus")}}"><i class="fa-light fa-angles-right me-2"></i> About Us</a>
                                 </li>
                                 <li class="mb-3">
-                                    <a href="{{route("site.membership")}}"><i class="fa-light fa-angles-right me-2"></i> Memberships</a>
+                                    <a href="{{route("site.volunteership")}}"><i class="fa-light fa-angles-right me-2"></i> Memberships</a>
                                 </li>
                                 <li class="mb-3">
                                     <a href="{{route("site.events")}}"><i class="fa-light fa-angles-right me-2"></i> Upcoming
                                         Event</a>
                                 </li>
-                                <li class="mb-3">
+                                {{-- <li class="mb-3">
                                     <a href="{{route("site.blog")}}"><i class="fa-light fa-angles-right me-2"></i>
                                         Blogs</a>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <a href="{{route("site.contactus")}}"><i class="fa-light fa-angles-right me-2"></i> Contact
                                         Us</a>
@@ -52,7 +52,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    {{-- <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                         <div class="footer__item">
                             <h3 class="title mb-40 text-white">Latest Post</h3>
                             <ul class="post">
@@ -71,7 +71,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                         <div class="footer__item">
                             <h3 class="title mb-40 text-white">Contact Info</h3>
@@ -90,9 +90,10 @@
                                 </li>
                             </ul>
                             <div class="social-icon mt-30">
-                                <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="active" href="#0"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="{{$social->facebook_url}}"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="active" href="{{$social->instagram_url}}"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="{{$social->linkedin_url}}"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="{{$social->twitter_url}}"><img src="{{asset("web-assets/assets/images/twitter.png")}}" width="35px" height="35px"/></a>
                             </div>
                         </div>
                     </div>

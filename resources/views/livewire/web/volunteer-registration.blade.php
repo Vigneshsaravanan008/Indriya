@@ -93,8 +93,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-6 col-sm-12">
-                                    <label for="emergency_contact_person_name">Emergency contact person name (Mom, Dad,
-                                        Brother, Sister, Husband, wife, Friends) <span class="error">*</span></label>
+                                    <label for="emergency_contact_person_name">Emergency contact person name (Parents/Guardian/Friends) <span class="error">*</span></label>
                                     <input id="emergency_contact_person_name" wire:model="emergency_contact_person_name"
                                         type="text" placeholder="Your Emergency Contact Person Name*">
                                     @error('emergency_contact_person_name')
@@ -168,7 +167,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-lg-6 col-sm-12" wire:ignore>
                                     <label for="Volunteer Before">Have you volunteered before? <span class="error">*</span></label>
                                     <select wire:model="volunteer_before"
@@ -190,8 +189,8 @@
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="row">
+                            </div> --}}
+                            {{-- <div class="row">
                                 <div class="col-lg-6 col-sm-12" wire:ignore>
                                     <label for="Available Week">Which days of week, are you available for volunteering?
                                         <span class="error">*</span></label>
@@ -207,6 +206,7 @@
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
+                                </div> --}}
                                 <div class="col-lg-6 col-sm-12">
                                     <label for="Image">Image <span class="error">*</span></label>
                                     <input type="file" wire:model="image" class="form-control" />
@@ -215,7 +215,6 @@
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
-                            </div>
                             <div class="col-12">
                                 <label for="skills">Do you have any special skills, which you would like to do while
                                     volunteering (Photography, poster designing, Website/App development, Drawing,
@@ -226,23 +225,23 @@
                                 @enderror
                             </div>
 
-                            <div class="col-12">
+                            {{-- <div class="col-12">
                                 <label for="New Team">Would you like to start a new team in your city & lead the team?
                                     (All guidance & support will be provide by Indriya Foundation) <span class="error">*</span></label>
                                 <textarea id="new_team_description" wire:model="new_team_description"></textarea>
                                 @error('new_team_description')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> --}}
 
-                            <div class="col-12">
+                            {{-- <div class="col-12">
                                 <label for="Volunteer Description">Why you want to do volunteering? Please share if
                                     anything <span class="error">*</span></label>
                                 <textarea id="why_volunteering_description" wire:model="why_volunteering_description"></textarea>
                                 @error('why_volunteering_description')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div> --}}
 
                             <div class="col-12">
                                 <label for="Suggestion">Suggestions if any?</label>
@@ -253,8 +252,7 @@
                             </div>
 
                             <div class="btn-two mt-4">
-                                <span class="btn-circle">
-                                </span>
+                                <span class="btn-circle"></span>
                                 <button type="button" wire:click="addMembership" class="btn-inner">
                                     <span class="btn-text">
                                         Submit

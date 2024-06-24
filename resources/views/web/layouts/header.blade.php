@@ -34,8 +34,8 @@
             </ul>
             <ul class="link-info">
                 <li><a href="{{$social->facebook_url}}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="{{$social->twitter_url}}"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="{{$social->twitter_url}}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="{{$social->twitter_url}}"><img src="{{asset("web-assets/assets/images/twitter.png")}}" width="20px" height="20px"/></a></li>
+                <li><a href="{{$social->linkedin_url}}"><i class="fa-brands fa-linkedin-in"></i></a></li>
                 <li><a href="{{$social->instagram_url}}"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
         </div>
@@ -59,20 +59,20 @@
                         <li>
                             <a href="#">Membership</a>
                             <ul class="sub-menu">
-                                <li>
+                                {{-- <li>
                                     <a href="{{route("site.membership")}}">Recipients Registration</a>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <a href="{{route("site.volunteership")}}">Volunteer Registration</a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="{{route('site.blog')}}">Blogs</a></li>
+                        {{-- <li><a href="{{route('site.blog')}}">Blogs</a></li> --}}
                         <li><a href="{{route("site.contactus")}}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="btn-two d-none d-lg-inline-block">
+            {{-- <div class="btn-two d-none d-lg-inline-block">
                 <span class=" btn-circle">
                 </span>
                 <a href="#" class="btn-inner">
@@ -80,7 +80,7 @@
                         DONATE NOW
                     </span>
                 </a>
-            </div>
+            </div> --}}
             <div
              class="bars d-block d-lg-none">
                 <i id="openButton" class="fa-solid fa-bars"></i>

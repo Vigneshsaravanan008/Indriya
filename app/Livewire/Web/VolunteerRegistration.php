@@ -26,13 +26,8 @@ class VolunteerRegistration extends Component
         'blood_group' => 'nullable',
         'city' => 'required',
         'other_city' => 'nullable',
-        'volunteer_before' => 'required',
-        'volunteer_other_name' => 'nullable',
         'image' => 'nullable',
         'skills' => 'required',
-        'available_week' => 'required',
-        'new_team_description' => 'required',
-        'why_volunteering_description' => 'required',
         'suggestion_description' => 'nullable',
     ];
     
@@ -63,13 +58,8 @@ class VolunteerRegistration extends Component
                 'blood_group'=>$this->blood_group,
                 'city'=>$this->city,
                 'other_city'=>$this->other_city,
-                'volunteer_before'=>$this->volunteer_before,
-                'volunteer_other_name'=>$this->volunteer_other_name,
                 'skills'=>$this->skills,
                 'image'=>$image_path,
-                'available_week'=>$this->available_week,
-                'new_team_description'=>$this->new_team_description,
-                'why_volunteering_description'=>$this->why_volunteering_description,
                 'suggestion_description'=>$this->suggestion_description,
             ]);
             $this->dispatch('dismissmodal', message: "VolunteerShip Added Successfully", parameter: '200');

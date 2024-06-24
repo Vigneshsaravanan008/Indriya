@@ -268,11 +268,11 @@
                                     <h4 class="mb-4 mt-20"><a href="{{route("site.viewevent",$campaign->slug)}}" class="primary-hover">
                                            {{$campaign->title}}</a></h4>
                                     <div class="progress-area">
-                                        <div class="progress__goal mt-15">
+                                        {{-- <div class="progress__goal mt-15">
                                             <h6>Date : <span>
                                             {{Carbon\Carbon::parse($campaign->created_at)->format('d, M Y')}}
                                         </span></h6>
-                                        </div>
+                                        </div> --}}
                                         <div class="btn-three mt-30">
                                             
                                             <span class="btn-circle">
@@ -325,7 +325,7 @@
     </section>
 @endif
 
-@if(isset($events) && count($events)>0)
+{{-- @if(isset($events) && count($events)>0)
     <section class="event-area pt-120 pb-120 bg-image" data-background="{{asset("web-assets/assets/images/bg/event-bg-image.jpg")}}">
         <div class="container-fluid">
             <div class="section-header text-center mb-60">
@@ -408,9 +408,9 @@
             </div>
         </div>
     </section>
-@endif
+@endif --}}
 
-@if(isset($blogs) && count($blogs)>0)
+{{-- @if(isset($blogs) && count($blogs)>0)
     <section class="blog-area pt-120">
         <div class="container">
             <div class="section-header mb-60 text-center">
@@ -471,5 +471,5 @@
             </div>
         </div>
     </section>
-@endif
+@endif --}}
 </div>
